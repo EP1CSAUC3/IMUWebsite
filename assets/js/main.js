@@ -397,5 +397,38 @@
 					$window.on('load', function() {
 						$main._show(location.hash.substr(1), true);
 					});
+    
+    var btns = document.querySelectorAll('.btn');
+    var paginationWrapper = document.querySelector('.pagination-wrapper');
+    var bigDotContainer = document.querySelector('.big-dot-container');
+    var littleDot = document.querySelector('.little-dot');
+
+    for(var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener('click', btnClick);
+    }
+
+    function btnClick() {
+        var pic1 = "../../images/pic04,jpg";
+        var pic2 = "../../images/pic05.jpg";
+        var pic3 = "../../images/pic06.jpg";
+        if(this.classList.contains('btn--prev')) {
+            paginationWrapper.classList.add('transition-prev');
+            document.getElementById("workImage").src=pic2;
+        } else {
+            paginationWrapper.classList.add('transition-next');
+            document.getElementById("workImage").src=pic3;
+        }
+        var timeout = setTimeout(cleanClasses, 500);
+        }
+
+function cleanClasses() {
+  if(paginationWrapper.classList.contains('transition-next')) {
+    paginationWrapper.classList.remove('transition-next')
+  } else if(paginationWrapper.classList.contains('transition-prev')) {
+    paginationWrapper.classList.remove('transition-prev')
+  }
+}
 
 })(jQuery);
+
+
