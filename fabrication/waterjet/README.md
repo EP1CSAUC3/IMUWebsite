@@ -5,7 +5,7 @@ This directory is a clean rebuild of the supplied artwork using the convention
 
 ## Review files
 
-- `waterjet-source-reference.png` — source artwork retained for repeatability.
+- `waterjet-source-revised.png` — newly revised source artwork.
 - `waterjet-border-cleaned.png` — first pass with the old outside black border
   removed and a 15 mm solid rim around the rope.
 - `waterjet-support-plan.png` — manufacturability markup. Orange is added plate
@@ -27,7 +27,7 @@ strategy are intentionally left for CAM.
 
 ```sh
 python3 scripts/build_waterjet_artwork.py \
-  fabrication/waterjet/waterjet-source-reference.png \
+  fabrication/waterjet/waterjet-source-revised.png \
   --output-dir fabrication/waterjet
 ```
 
