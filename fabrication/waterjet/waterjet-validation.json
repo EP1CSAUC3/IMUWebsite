@@ -1,60 +1,156 @@
 {
-  "closed_inner_contours": 276,
-  "cut_components": 276,
-  "cut_pixels": 243736,
-  "initial_material_islands": 104,
+  "closed_inner_contours": 97,
+  "cut_components": 97,
+  "cut_pixels": 1268021,
+  "initial_material_islands": 51,
   "island_resolutions": [
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 0.2384185791015625,
+      "area_mm2": 10.609759368896485,
       "from_xy_mm": null,
-      "region": "captain portrait",
+      "region": "airplane and route",
       "support_length_mm": null,
       "to_xy_mm": null
     },
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 0.2384185791015625,
+      "area_mm2": 9.391519775390625,
       "from_xy_mm": null,
-      "region": "captain portrait",
+      "region": "quote and dividers",
       "support_length_mm": null,
       "to_xy_mm": null
     },
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 0.2384185791015625,
+      "area_mm2": 8.926373748779298,
       "from_xy_mm": null,
-      "region": "captain portrait",
+      "region": "quote and dividers",
       "support_length_mm": null,
       "to_xy_mm": null
     },
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 0.2384185791015625,
+      "area_mm2": 8.793474884033204,
       "from_xy_mm": null,
-      "region": "captain portrait",
+      "region": "nautical symbols",
       "support_length_mm": null,
       "to_xy_mm": null
     },
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 2.384185791015625,
+      "area_mm2": 7.95178207397461,
       "from_xy_mm": null,
-      "region": "captain portrait",
+      "region": "quote and dividers",
       "support_length_mm": null,
       "to_xy_mm": null
     },
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 2.384185791015625,
+      "area_mm2": 6.866441345214844,
       "from_xy_mm": null,
-      "region": "mountains and forest",
+      "region": "quote and dividers",
       "support_length_mm": null,
       "to_xy_mm": null
     },
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 2.6226043701171875,
+      "area_mm2": 7.663834533691407,
+      "from_xy_mm": null,
+      "region": "nautical symbols",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 4.274913482666016,
+      "from_xy_mm": null,
+      "region": "quote and dividers",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 7.929632263183595,
+      "from_xy_mm": null,
+      "region": "quote and dividers",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 9.72376693725586,
+      "from_xy_mm": null,
+      "region": "quote and dividers",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 9.147871856689454,
+      "from_xy_mm": null,
+      "region": "tropical island",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 8.151130371093751,
+      "from_xy_mm": null,
+      "region": "quote and dividers",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 8.239729614257813,
+      "from_xy_mm": null,
+      "region": "quote and dividers",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 9.52441864013672,
+      "from_xy_mm": null,
+      "region": "quote and dividers",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 6.733542480468751,
+      "from_xy_mm": null,
+      "region": "quote and dividers",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 9.125722045898438,
+      "from_xy_mm": null,
+      "region": "quote and dividers",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 9.258620910644533,
+      "from_xy_mm": null,
+      "region": "quote and dividers",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 8.926373748779298,
+      "from_xy_mm": null,
+      "region": "quote and dividers",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 8.284029235839844,
       "from_xy_mm": null,
       "region": "globe and hiker",
       "support_length_mm": null,
@@ -62,1361 +158,370 @@
     },
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 0.2384185791015625,
+      "area_mm2": 8.173280181884767,
       "from_xy_mm": null,
-      "region": "tropical island",
+      "region": "quote and dividers",
       "support_length_mm": null,
       "to_xy_mm": null
     },
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 0.2384185791015625,
+      "area_mm2": 6.644943237304688,
       "from_xy_mm": null,
-      "region": "tropical island",
+      "region": "quote and dividers",
       "support_length_mm": null,
       "to_xy_mm": null
     },
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 0.2384185791015625,
+      "area_mm2": 6.201947021484376,
       "from_xy_mm": null,
-      "region": "tropical island",
+      "region": "quote and dividers",
       "support_length_mm": null,
       "to_xy_mm": null
     },
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 0.2384185791015625,
+      "area_mm2": 9.745916748046875,
       "from_xy_mm": null,
-      "region": "tropical island",
+      "region": "quote and dividers",
       "support_length_mm": null,
       "to_xy_mm": null
     },
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 0.2384185791015625,
+      "area_mm2": 8.682725830078125,
       "from_xy_mm": null,
-      "region": "tropical island",
+      "region": "globe and hiker",
       "support_length_mm": null,
       "to_xy_mm": null
     },
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 0.2384185791015625,
+      "area_mm2": 8.85992431640625,
+      "from_xy_mm": null,
+      "region": "quote and dividers",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 9.701617126464845,
+      "from_xy_mm": null,
+      "region": "quote and dividers",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 9.236471099853517,
+      "from_xy_mm": null,
+      "region": "quote and dividers",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 6.046898345947266,
+      "from_xy_mm": null,
+      "region": "quote and dividers",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 6.113347778320313,
+      "from_xy_mm": null,
+      "region": "quote and dividers",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 7.043639831542969,
+      "from_xy_mm": null,
+      "region": "quote and dividers",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 8.394778289794923,
+      "from_xy_mm": null,
+      "region": "quote and dividers",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 4.385662536621094,
+      "from_xy_mm": null,
+      "region": "quote and dividers",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 2.6358274841308598,
+      "from_xy_mm": null,
+      "region": "sailboat and waves",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 2.502928619384766,
+      "from_xy_mm": null,
+      "region": "yacht and lower waves",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 1.0631909179687502,
       "from_xy_mm": null,
       "region": "flag and palms",
       "support_length_mm": null,
       "to_xy_mm": null
     },
     {
-      "action": "remove tiny trapped detail",
-      "area_mm2": 1.9073486328125,
-      "from_xy_mm": null,
-      "region": "skyline and animals",
-      "support_length_mm": null,
-      "to_xy_mm": null
-    },
-    {
-      "action": "remove tiny trapped detail",
-      "area_mm2": 0.2384185791015625,
-      "from_xy_mm": null,
-      "region": "skyline and animals",
-      "support_length_mm": null,
-      "to_xy_mm": null
-    },
-    {
-      "action": "remove tiny trapped detail",
-      "area_mm2": 2.86102294921875,
-      "from_xy_mm": null,
-      "region": "skyline and animals",
-      "support_length_mm": null,
-      "to_xy_mm": null
-    },
-    {
       "action": "add support",
-      "area_mm2": 40.76957702636719,
+      "area_mm2": 22.725705871582033,
       "from_xy_mm": [
-        328.61328125,
-        438.4765625
-      ],
-      "region": "rope border",
-      "support_length_mm": 1.5440808887540916,
-      "to_xy_mm": [
-        327.1484375,
-        437.98828125
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 25.74920654296875,
-      "from_xy_mm": [
-        201.66015625,
-        114.74609375
-      ],
-      "region": "captain portrait",
-      "support_length_mm": 1.7605230837226509,
-      "to_xy_mm": [
-        200.68359375,
-        113.28125
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 4.5299530029296875,
-      "from_xy_mm": [
-        334.9609375,
-        382.8125
-      ],
-      "region": "skyline and animals",
-      "support_length_mm": 1.7605230837226509,
-      "to_xy_mm": [
-        335.9375,
-        384.27734375
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 10.728836059570312,
-      "from_xy_mm": [
-        331.54296875,
-        381.34765625
-      ],
-      "region": "skyline and animals",
-      "support_length_mm": 1.7605230837226509,
-      "to_xy_mm": [
-        333.0078125,
-        382.32421875
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 30.994415283203125,
-      "from_xy_mm": [
-        212.40234375,
-        441.40625
-      ],
-      "region": "yacht and lower waves",
-      "support_length_mm": 1.7605230837226509,
-      "to_xy_mm": [
-        210.9375,
-        440.4296875
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 20.742416381835938,
-      "from_xy_mm": [
-        220.21484375,
-        441.89453125
-      ],
-      "region": "yacht and lower waves",
-      "support_length_mm": 1.7605230837226509,
-      "to_xy_mm": [
-        218.75,
-        440.91796875
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 11.205673217773438,
-      "from_xy_mm": [
-        331.0546875,
-        364.2578125
-      ],
-      "region": "skyline and animals",
-      "support_length_mm": 1.953125,
-      "to_xy_mm": [
-        331.0546875,
-        366.2109375
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 22.649765014648438,
-      "from_xy_mm": [
-        328.125,
-        361.328125
-      ],
-      "region": "skyline and animals",
-      "support_length_mm": 1.7605230837226509,
-      "to_xy_mm": [
-        329.58984375,
-        362.3046875
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 4.0531158447265625,
-      "from_xy_mm": [
-        321.77734375,
-        361.81640625
-      ],
-      "region": "skyline and animals",
-      "support_length_mm": 1.7605230837226509,
-      "to_xy_mm": [
-        322.75390625,
-        363.28125
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 128.74603271484375,
-      "from_xy_mm": [
-        319.3359375,
-        361.81640625
-      ],
-      "region": "skyline and animals",
-      "support_length_mm": 0.9765625,
-      "to_xy_mm": [
-        320.3125,
-        361.81640625
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 26.464462280273438,
-      "from_xy_mm": [
-        362.79296875,
-        392.578125
-      ],
-      "region": "yacht and lower waves",
-      "support_length_mm": 1.953125,
-      "to_xy_mm": [
-        362.79296875,
-        390.625
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 3.814697265625,
-      "from_xy_mm": [
-        278.3203125,
-        96.19140625
-      ],
-      "region": "captain portrait",
-      "support_length_mm": 2.0132351687586234,
-      "to_xy_mm": [
-        280.2734375,
-        96.6796875
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 6.198883056640625,
-      "from_xy_mm": [
-        314.453125,
-        358.3984375
-      ],
-      "region": "skyline and animals",
-      "support_length_mm": 2.0132351687586234,
-      "to_xy_mm": [
-        314.94140625,
-        360.3515625
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 119.20928955078125,
-      "from_xy_mm": [
-        276.85546875,
-        70.80078125
-      ],
-      "region": "captain portrait",
-      "support_length_mm": 2.1836601342771385,
-      "to_xy_mm": [
-        278.80859375,
-        69.82421875
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 12.636184692382812,
-      "from_xy_mm": [
-        247.55859375,
-        72.75390625
-      ],
-      "region": "captain portrait",
-      "support_length_mm": 1.46484375,
-      "to_xy_mm": [
-        249.0234375,
-        72.75390625
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 13.828277587890625,
-      "from_xy_mm": [
-        244.62890625,
-        74.21875
-      ],
-      "region": "captain portrait",
-      "support_length_mm": 1.46484375,
-      "to_xy_mm": [
-        246.09375,
-        74.21875
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 13.589859008789062,
-      "from_xy_mm": [
-        241.2109375,
-        74.70703125
-      ],
-      "region": "captain portrait",
-      "support_length_mm": 1.3810679320049757,
-      "to_xy_mm": [
-        242.1875,
-        73.73046875
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 59.604644775390625,
-      "from_xy_mm": [
-        237.79296875,
-        75.68359375
-      ],
-      "region": "captain portrait",
-      "support_length_mm": 1.5440808887540916,
-      "to_xy_mm": [
-        239.2578125,
-        75.1953125
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 30.040740966796875,
-      "from_xy_mm": [
-        224.12109375,
-        84.47265625
-      ],
-      "region": "captain portrait",
-      "support_length_mm": 1.46484375,
-      "to_xy_mm": [
-        225.5859375,
-        84.47265625
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 9.298324584960938,
-      "from_xy_mm": [
-        221.6796875,
-        84.47265625
-      ],
-      "region": "captain portrait",
-      "support_length_mm": 0.9765625,
-      "to_xy_mm": [
-        222.65625,
-        84.47265625
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 128.03077697753906,
-      "from_xy_mm": [
-        230.46875,
-        84.47265625
-      ],
-      "region": "captain portrait",
-      "support_length_mm": 1.7605230837226509,
-      "to_xy_mm": [
-        229.4921875,
-        83.0078125
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 42.67692565917969,
-      "from_xy_mm": [
-        215.8203125,
-        88.8671875
-      ],
-      "region": "captain portrait",
-      "support_length_mm": 1.7605230837226509,
-      "to_xy_mm": [
-        217.28515625,
-        87.890625
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 99.65896606445312,
-      "from_xy_mm": [
-        268.06640625,
-        67.87109375
-      ],
-      "region": "captain portrait",
-      "support_length_mm": 1.953125,
-      "to_xy_mm": [
-        268.06640625,
-        69.82421875
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 13.589859008789062,
-      "from_xy_mm": [
-        310.546875,
-        356.93359375
-      ],
-      "region": "skyline and animals",
-      "support_length_mm": 2.1836601342771385,
-      "to_xy_mm": [
-        312.5,
-        357.91015625
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 9.775161743164062,
-      "from_xy_mm": [
-        306.15234375,
-        356.4453125
-      ],
-      "region": "skyline and animals",
-      "support_length_mm": 2.0132351687586234,
-      "to_xy_mm": [
-        308.10546875,
-        356.93359375
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 50.067901611328125,
-      "from_xy_mm": [
-        300.29296875,
-        357.91015625
-      ],
-      "region": "skyline and animals",
-      "support_length_mm": 2.0716018980074633,
-      "to_xy_mm": [
-        301.7578125,
-        356.4453125
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 12.874603271484375,
-      "from_xy_mm": [
-        305.17578125,
-        362.3046875
-      ],
-      "region": "skyline and animals",
-      "support_length_mm": 2.0132351687586234,
-      "to_xy_mm": [
-        303.22265625,
-        361.81640625
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 11.205673217773438,
-      "from_xy_mm": [
-        289.55078125,
-        361.328125
-      ],
-      "region": "skyline and animals",
-      "support_length_mm": 2.1836601342771385,
-      "to_xy_mm": [
-        288.57421875,
-        363.28125
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 1295.328140258789,
-      "from_xy_mm": [
-        277.83203125,
-        62.98828125
-      ],
-      "region": "captain portrait",
-      "support_length_mm": 2.44140625,
-      "to_xy_mm": [
-        275.390625,
-        62.98828125
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 25.272369384765625,
-      "from_xy_mm": [
-        242.1875,
-        69.82421875
-      ],
-      "region": "captain portrait",
-      "support_length_mm": 2.44140625,
-      "to_xy_mm": [
-        242.1875,
-        72.265625
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 1196.6228485107422,
-      "from_xy_mm": [
-        277.34375,
-        103.515625
-      ],
-      "region": "captain portrait",
-      "support_length_mm": 2.44140625,
-      "to_xy_mm": [
-        279.296875,
-        102.05078125
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 45.299530029296875,
-      "from_xy_mm": [
-        245.1171875,
-        126.46484375
-      ],
-      "region": "captain portrait",
-      "support_length_mm": 1.7605230837226509,
-      "to_xy_mm": [
-        244.140625,
-        125.0
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 582.6950073242188,
-      "from_xy_mm": [
-        246.58203125,
-        133.30078125
-      ],
-      "region": "captain portrait",
-      "support_length_mm": 1.7605230837226509,
-      "to_xy_mm": [
-        245.1171875,
-        132.32421875
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 72.95608520507812,
-      "from_xy_mm": [
-        265.13671875,
-        117.1875
-      ],
-      "region": "captain portrait",
-      "support_length_mm": 1.953125,
-      "to_xy_mm": [
-        265.13671875,
-        115.234375
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 15.735626220703125,
-      "from_xy_mm": [
-        275.87890625,
-        118.1640625
-      ],
-      "region": "captain portrait",
-      "support_length_mm": 1.953125,
-      "to_xy_mm": [
-        273.92578125,
-        118.1640625
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 118.255615234375,
-      "from_xy_mm": [
-        208.49609375,
-        105.95703125
-      ],
-      "region": "captain portrait",
-      "support_length_mm": 2.44140625,
-      "to_xy_mm": [
-        209.9609375,
-        107.91015625
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 9.775161743164062,
-      "from_xy_mm": [
-        228.02734375,
-        98.6328125
-      ],
-      "region": "captain portrait",
-      "support_length_mm": 1.5440808887540916,
-      "to_xy_mm": [
-        227.5390625,
-        97.16796875
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 307.7983856201172,
-      "from_xy_mm": [
-        68.359375,
-        211.9140625
-      ],
-      "region": "globe and hiker",
-      "support_length_mm": 2.44140625,
-      "to_xy_mm": [
-        69.82421875,
-        213.8671875
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 299.69215393066406,
-      "from_xy_mm": [
-        143.5546875,
-        292.96875
-      ],
-      "region": "globe and hiker",
-      "support_length_mm": 2.44140625,
-      "to_xy_mm": [
-        145.99609375,
-        292.96875
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 132.3223114013672,
-      "from_xy_mm": [
-        111.81640625,
-        338.37890625
+        200.471484375,
+        171.003515625
       ],
       "region": "quote and dividers",
-      "support_length_mm": 2.44140625,
+      "support_length_mm": 1.339453125,
       "to_xy_mm": [
-        111.81640625,
-        335.9375
+        200.471484375,
+        169.6640625
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 322.3419189453125,
+      "area_mm2": 16.590208282470705,
       "from_xy_mm": [
-        111.328125,
-        357.421875
+        209.103515625,
+        223.8375
       ],
-      "region": "flag and palms",
-      "support_length_mm": 2.44140625,
+      "region": "sailboat and waves",
+      "support_length_mm": 1.473323269862908,
       "to_xy_mm": [
-        113.28125,
-        355.95703125
+        210.14531250000002,
+        224.879296875
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 37.43171691894531,
+      "area_mm2": 13.312036285400392,
       "from_xy_mm": [
-        288.0859375,
-        412.109375
-      ],
-      "region": "yacht and lower waves",
-      "support_length_mm": 2.44140625,
-      "to_xy_mm": [
-        285.64453125,
-        412.109375
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 110.14938354492188,
-      "from_xy_mm": [
-        293.45703125,
-        413.0859375
-      ],
-      "region": "yacht and lower waves",
-      "support_length_mm": 2.44140625,
-      "to_xy_mm": [
-        291.015625,
-        413.0859375
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 26.226043701171875,
-      "from_xy_mm": [
-        306.15234375,
-        413.57421875
-      ],
-      "region": "yacht and lower waves",
-      "support_length_mm": 2.44140625,
-      "to_xy_mm": [
-        308.59375,
-        413.57421875
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 11.444091796875,
-      "from_xy_mm": [
-        268.5546875,
-        420.41015625
-      ],
-      "region": "yacht and lower waves",
-      "support_length_mm": 2.44140625,
-      "to_xy_mm": [
-        270.5078125,
-        418.9453125
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 7.8678131103515625,
-      "from_xy_mm": [
-        256.8359375,
-        361.328125
+        192.58359375,
+        223.2421875
       ],
       "region": "skyline and animals",
-      "support_length_mm": 2.6294750034836443,
+      "support_length_mm": 1.532279329576581,
       "to_xy_mm": [
-        257.8125,
-        358.88671875
+        191.839453125,
+        224.581640625
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 8.344650268554688,
+      "area_mm2": 34.39865615844727,
       "from_xy_mm": [
-        256.8359375,
-        364.74609375
+        197.94140625,
+        222.94453125
       ],
       "region": "skyline and animals",
-      "support_length_mm": 1.953125,
+      "support_length_mm": 1.6438603701360728,
       "to_xy_mm": [
-        256.8359375,
-        362.79296875
+        196.304296875,
+        223.093359375
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 5.9604644775390625,
+      "area_mm2": 108.97706909179688,
       "from_xy_mm": [
-        251.953125,
-        368.1640625
+        54.917578125,
+        118.76484375
       ],
-      "region": "skyline and animals",
-      "support_length_mm": 2.44140625,
+      "region": "globe and hiker",
+      "support_length_mm": 2.56917177621946,
       "to_xy_mm": [
-        251.953125,
-        365.72265625
+        55.3640625,
+        116.23476562500001
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 5.9604644775390625,
+      "area_mm2": 164.88319152832034,
       "from_xy_mm": [
-        256.34765625,
-        371.58203125
+        39.290625,
+        119.36015625
       ],
-      "region": "skyline and animals",
-      "support_length_mm": 2.44140625,
+      "region": "globe and hiker",
+      "support_length_mm": 2.599171462458713,
       "to_xy_mm": [
-        256.34765625,
-        369.140625
+        38.248828125,
+        116.97890625000001
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 5.7220458984375,
+      "area_mm2": 149.9320692443848,
       "from_xy_mm": [
-        256.34765625,
-        375.48828125
+        61.3171875,
+        90.18984375
       ],
-      "region": "skyline and animals",
-      "support_length_mm": 2.44140625,
+      "region": "mountains and forest",
+      "support_length_mm": 2.8238151293534828,
       "to_xy_mm": [
-        256.34765625,
-        373.046875
+        58.63828125,
+        91.0828125
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 8.344650268554688,
+      "area_mm2": 207.69877578735353,
       "from_xy_mm": [
-        256.34765625,
-        378.41796875
-      ],
-      "region": "skyline and animals",
-      "support_length_mm": 1.46484375,
-      "to_xy_mm": [
-        256.34765625,
-        376.953125
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 8.344650268554688,
-      "from_xy_mm": [
-        256.34765625,
-        381.8359375
-      ],
-      "region": "skyline and animals",
-      "support_length_mm": 1.953125,
-      "to_xy_mm": [
-        256.34765625,
-        379.8828125
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 5.7220458984375,
-      "from_xy_mm": [
-        256.34765625,
-        385.7421875
-      ],
-      "region": "yacht and lower waves",
-      "support_length_mm": 2.44140625,
-      "to_xy_mm": [
-        256.34765625,
-        383.30078125
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 5.7220458984375,
-      "from_xy_mm": [
-        256.34765625,
-        389.16015625
-      ],
-      "region": "yacht and lower waves",
-      "support_length_mm": 1.953125,
-      "to_xy_mm": [
-        256.34765625,
-        387.20703125
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 36.95487976074219,
-      "from_xy_mm": [
-        210.44921875,
-        114.2578125
+        120.55078125,
+        87.80859375
       ],
       "region": "captain portrait",
-      "support_length_mm": 2.7621358640099514,
+      "support_length_mm": 3.0135398494654764,
       "to_xy_mm": [
-        208.49609375,
-        112.3046875
+        123.378515625,
+        86.766796875
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 204.32472229003906,
+      "area_mm2": 218.53003326416018,
       "from_xy_mm": [
-        222.65625,
-        122.0703125
+        105.66796875,
+        99.11953125
       ],
-      "region": "captain portrait",
-      "support_length_mm": 2.847144479904932,
+      "region": "mountains and forest",
+      "support_length_mm": 3.0355100541857047,
       "to_xy_mm": [
-        221.19140625,
-        124.51171875
+        108.64453125,
+        98.52421875
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 15.974044799804688,
+      "area_mm2": 212.57173416137698,
       "from_xy_mm": [
-        210.44921875,
-        122.55859375
+        75.009375,
+        93.4640625
       ],
-      "region": "captain portrait",
-      "support_length_mm": 2.847144479904932,
+      "region": "mountains and forest",
+      "support_length_mm": 3.064558659153162,
       "to_xy_mm": [
-        208.984375,
-        120.1171875
+        72.33046875,
+        94.95234375
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 231.9812774658203,
+      "area_mm2": 15.770665283203126,
       "from_xy_mm": [
-        337.890625,
-        154.78515625
-      ],
-      "region": "nautical symbols",
-      "support_length_mm": 3.088161777508183,
-      "to_xy_mm": [
-        336.9140625,
-        151.85546875
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 59.84306335449219,
-      "from_xy_mm": [
-        334.47265625,
-        161.1328125
+        208.508203125,
+        84.683203125
       ],
       "region": "nautical symbols",
-      "support_length_mm": 3.126525506559008,
+      "support_length_mm": 3.4520426135212188,
       "to_xy_mm": [
-        332.51953125,
-        158.69140625
+        208.9546875,
+        88.10625
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 58.88938903808594,
+      "area_mm2": 26.446874084472658,
       "from_xy_mm": [
-        351.5625,
-        161.1328125
+        248.09648437500002,
+        76.49765625
       ],
       "region": "nautical symbols",
-      "support_length_mm": 3.126525506559008,
+      "support_length_mm": 3.6757835331422237,
       "to_xy_mm": [
-        353.515625,
-        158.69140625
+        249.4359375,
+        73.074609375
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 59.84306335449219,
+      "area_mm2": 52.93804779052735,
       "from_xy_mm": [
-        329.58984375,
-        165.0390625
+        210.294140625,
+        96.440625
       ],
       "region": "nautical symbols",
-      "support_length_mm": 3.126525506559008,
+      "support_length_mm": 4.2357226940302235,
       "to_xy_mm": [
-        327.1484375,
-        163.0859375
+        211.63359375000002,
+        92.422265625
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 58.88938903808594,
+      "area_mm2": 54.067688140869144,
       "from_xy_mm": [
-        358.3984375,
-        167.96875
+        206.126953125,
+        96.73828125
       ],
       "region": "nautical symbols",
-      "support_length_mm": 3.126525506559008,
+      "support_length_mm": 2.530078125,
       "to_xy_mm": [
-        360.83984375,
-        166.015625
+        208.65703125000002,
+        96.73828125
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 65.32669067382812,
+      "area_mm2": 56.79211486816407,
       "from_xy_mm": [
-        327.63671875,
-        183.10546875
+        197.64375,
+        107.45390625
       ],
       "region": "nautical symbols",
-      "support_length_mm": 3.126525506559008,
+      "support_length_mm": 2.530078125,
       "to_xy_mm": [
-        325.1953125,
-        185.05859375
+        197.64375,
+        104.923828125
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 62.22724914550781,
+      "area_mm2": 55.37452697753907,
       "from_xy_mm": [
-        333.0078125,
-        188.96484375
+        212.22890625,
+        107.45390625
       ],
       "region": "nautical symbols",
-      "support_length_mm": 3.126525506559008,
+      "support_length_mm": 2.530078125,
       "to_xy_mm": [
-        331.0546875,
-        191.40625
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 64.61143493652344,
-      "from_xy_mm": [
-        358.88671875,
-        181.640625
-      ],
-      "region": "nautical symbols",
-      "support_length_mm": 3.2754902014157077,
-      "to_xy_mm": [
-        361.81640625,
-        183.10546875
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 62.22724914550781,
-      "from_xy_mm": [
-        352.05078125,
-        189.453125
-      ],
-      "region": "nautical symbols",
-      "support_length_mm": 3.2754902014157077,
-      "to_xy_mm": [
-        353.515625,
-        192.3828125
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 5.7220458984375,
-      "from_xy_mm": [
-        229.4921875,
-        389.6484375
-      ],
-      "region": "yacht and lower waves",
-      "support_length_mm": 3.2754902014157077,
-      "to_xy_mm": [
-        230.95703125,
-        386.71875
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 7.3909759521484375,
-      "from_xy_mm": [
-        207.03125,
-        369.140625
-      ],
-      "region": "skyline and animals",
-      "support_length_mm": 3.41796875,
-      "to_xy_mm": [
-        210.44921875,
-        369.140625
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 7.3909759521484375,
-      "from_xy_mm": [
-        207.03125,
-        373.046875
-      ],
-      "region": "skyline and animals",
-      "support_length_mm": 2.44140625,
-      "to_xy_mm": [
-        207.03125,
-        370.60546875
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 7.62939453125,
-      "from_xy_mm": [
-        207.03125,
-        376.46484375
-      ],
-      "region": "skyline and animals",
-      "support_length_mm": 1.953125,
-      "to_xy_mm": [
-        207.03125,
-        374.51171875
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 7.8678131103515625,
-      "from_xy_mm": [
-        207.03125,
-        380.37109375
-      ],
-      "region": "skyline and animals",
-      "support_length_mm": 2.44140625,
-      "to_xy_mm": [
-        207.03125,
-        377.9296875
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 16.21246337890625,
-      "from_xy_mm": [
-        237.3046875,
-        380.37109375
-      ],
-      "region": "skyline and animals",
-      "support_length_mm": 3.90625,
-      "to_xy_mm": [
-        233.3984375,
-        380.37109375
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 5.7220458984375,
-      "from_xy_mm": [
-        241.2109375,
-        380.859375
-      ],
-      "region": "skyline and animals",
-      "support_length_mm": 2.44140625,
-      "to_xy_mm": [
-        238.76953125,
-        380.859375
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 4.76837158203125,
-      "from_xy_mm": [
-        241.2109375,
-        385.7421875
-      ],
-      "region": "yacht and lower waves",
-      "support_length_mm": 2.44140625,
-      "to_xy_mm": [
-        241.2109375,
-        383.30078125
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 4.76837158203125,
-      "from_xy_mm": [
-        241.2109375,
-        390.13671875
-      ],
-      "region": "yacht and lower waves",
-      "support_length_mm": 2.44140625,
-      "to_xy_mm": [
-        241.2109375,
-        387.6953125
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 3.814697265625,
-      "from_xy_mm": [
-        241.2109375,
-        394.53125
-      ],
-      "region": "yacht and lower waves",
-      "support_length_mm": 2.44140625,
-      "to_xy_mm": [
-        241.2109375,
-        392.08984375
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 4.76837158203125,
-      "from_xy_mm": [
-        241.2109375,
-        398.4375
-      ],
-      "region": "yacht and lower waves",
-      "support_length_mm": 2.44140625,
-      "to_xy_mm": [
-        241.2109375,
-        395.99609375
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 3.814697265625,
-      "from_xy_mm": [
-        241.2109375,
-        402.83203125
-      ],
-      "region": "yacht and lower waves",
-      "support_length_mm": 2.44140625,
-      "to_xy_mm": [
-        241.2109375,
-        400.390625
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 47.44529724121094,
-      "from_xy_mm": [
-        328.125,
-        114.74609375
-      ],
-      "region": "airplane and route",
-      "support_length_mm": 4.143203796014927,
-      "to_xy_mm": [
-        331.0546875,
-        117.67578125
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 112.29515075683594,
-      "from_xy_mm": [
-        333.49609375,
-        132.32421875
-      ],
-      "region": "nautical symbols",
-      "support_length_mm": 4.143203796014927,
-      "to_xy_mm": [
-        336.42578125,
-        135.25390625
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 33.37860107421875,
-      "from_xy_mm": [
-        341.796875,
-        172.36328125
-      ],
-      "region": "nautical symbols",
-      "support_length_mm": 4.171876828768325,
-      "to_xy_mm": [
-        340.33203125,
-        168.45703125
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 196.21849060058594,
-      "from_xy_mm": [
-        186.03515625,
-        428.7109375
-      ],
-      "region": "yacht and lower waves",
-      "support_length_mm": 4.39453125,
-      "to_xy_mm": [
-        186.03515625,
-        433.10546875
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 55.3131103515625,
-      "from_xy_mm": [
-        221.19140625,
-        387.6953125
-      ],
-      "region": "skyline and animals",
-      "support_length_mm": 4.606436099637013,
-      "to_xy_mm": [
-        217.28515625,
-        390.13671875
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 62.70408630371094,
-      "from_xy_mm": [
-        411.1328125,
-        134.765625
-      ],
-      "region": "nautical symbols",
-      "support_length_mm": 4.809012598533254,
-      "to_xy_mm": [
-        409.1796875,
-        130.37109375
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 23.603439331054688,
-      "from_xy_mm": [
-        266.11328125,
-        391.11328125
-      ],
-      "region": "yacht and lower waves",
-      "support_length_mm": 4.8828125,
-      "to_xy_mm": [
-        261.23046875,
-        391.11328125
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 13.113021850585938,
-      "from_xy_mm": [
-        269.04296875,
-        449.70703125
-      ],
-      "region": "yacht and lower waves",
-      "support_length_mm": 5.37109375,
-      "to_xy_mm": [
-        269.04296875,
-        444.3359375
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 14.066696166992188,
-      "from_xy_mm": [
-        279.296875,
-        450.1953125
-      ],
-      "region": "rope border",
-      "support_length_mm": 5.37109375,
-      "to_xy_mm": [
-        273.92578125,
-        450.1953125
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 14.30511474609375,
-      "from_xy_mm": [
-        291.50390625,
-        448.73046875
-      ],
-      "region": "rope border",
-      "support_length_mm": 5.859375,
-      "to_xy_mm": [
-        291.50390625,
-        442.87109375
+        212.22890625,
+        104.923828125
       ]
     }
   ],
-  "legacy_border_pixels_removed": 29692,
-  "longest_support_mm": 5.8594,
+  "legacy_border_pixels_removed": 181566,
+  "longest_support_mm": 4.2357,
   "material_components": 1,
-  "material_pixels": 570224,
-  "nominal_diameter_mm": 500.0,
+  "material_pixels": 2006883,
+  "nominal_diameter_in": 12.0,
+  "nominal_diameter_mm": 304.8,
   "object_assessment": [
     {
       "as_supplied": "fails: floating material or undersized cuts",
       "final_status": "works after automatic changes",
-      "longest_support_mm": 4.143,
-      "object": "airplane and route",
-      "resolution": "retained with stencil supports and/or tiny-detail cleanup",
-      "support_count": 1,
-      "tiny_material_details_removed": 0,
-      "undersized_cut_details_removed": 0
-    },
-    {
-      "as_supplied": "fails: floating material or undersized cuts",
-      "final_status": "works after automatic changes",
-      "longest_support_mm": 2.847,
-      "object": "captain portrait",
-      "resolution": "retained with stencil supports and/or tiny-detail cleanup",
-      "support_count": 24,
-      "tiny_material_details_removed": 5,
-      "undersized_cut_details_removed": 0
-    },
-    {
-      "as_supplied": "fails: floating material or undersized cuts",
-      "final_status": "works after automatic changes",
-      "longest_support_mm": 2.441,
-      "object": "flag and palms",
-      "resolution": "retained with stencil supports and/or tiny-detail cleanup",
-      "support_count": 1,
-      "tiny_material_details_removed": 1,
-      "undersized_cut_details_removed": 0
-    },
-    {
-      "as_supplied": "fails: floating material or undersized cuts",
-      "final_status": "works after automatic changes",
-      "longest_support_mm": 2.441,
-      "object": "globe and hiker",
-      "resolution": "retained with stencil supports and/or tiny-detail cleanup",
-      "support_count": 2,
-      "tiny_material_details_removed": 1,
-      "undersized_cut_details_removed": 1
-    },
-    {
-      "as_supplied": "fails: floating material or undersized cuts",
-      "final_status": "works after automatic changes",
       "longest_support_mm": 0.0,
-      "object": "mountains and forest",
-      "resolution": "retained with stencil supports and/or tiny-detail cleanup",
+      "object": "airplane and route",
+      "resolution": "retained with stencil supports and/or detail cleanup",
       "support_count": 0,
       "tiny_material_details_removed": 1,
       "undersized_cut_details_removed": 0
@@ -1424,19 +529,9 @@
     {
       "as_supplied": "fails: floating material or undersized cuts",
       "final_status": "works after automatic changes",
-      "longest_support_mm": 4.809,
-      "object": "nautical symbols",
-      "resolution": "retained with stencil supports and/or tiny-detail cleanup",
-      "support_count": 12,
-      "tiny_material_details_removed": 0,
-      "undersized_cut_details_removed": 0
-    },
-    {
-      "as_supplied": "fails: floating material or undersized cuts",
-      "final_status": "works after automatic changes",
-      "longest_support_mm": 2.441,
-      "object": "quote and dividers",
-      "resolution": "retained with stencil supports and/or tiny-detail cleanup",
+      "longest_support_mm": 3.014,
+      "object": "captain portrait",
+      "resolution": "retained with stencil supports and/or detail cleanup",
       "support_count": 1,
       "tiny_material_details_removed": 0,
       "undersized_cut_details_removed": 0
@@ -1444,21 +539,81 @@
     {
       "as_supplied": "fails: floating material or undersized cuts",
       "final_status": "works after automatic changes",
-      "longest_support_mm": 5.859,
-      "object": "rope border",
-      "resolution": "retained with stencil supports and/or tiny-detail cleanup",
-      "support_count": 3,
-      "tiny_material_details_removed": 0,
-      "undersized_cut_details_removed": 6
+      "longest_support_mm": 0.0,
+      "object": "flag and palms",
+      "resolution": "retained with stencil supports and/or detail cleanup",
+      "support_count": 0,
+      "tiny_material_details_removed": 1,
+      "undersized_cut_details_removed": 0
     },
     {
       "as_supplied": "fails: floating material or undersized cuts",
       "final_status": "works after automatic changes",
-      "longest_support_mm": 4.606,
+      "longest_support_mm": 2.599,
+      "object": "globe and hiker",
+      "resolution": "retained with stencil supports and/or detail cleanup",
+      "support_count": 2,
+      "tiny_material_details_removed": 2,
+      "undersized_cut_details_removed": 0
+    },
+    {
+      "as_supplied": "fails: floating material or undersized cuts",
+      "final_status": "works after automatic changes",
+      "longest_support_mm": 3.065,
+      "object": "mountains and forest",
+      "resolution": "retained with stencil supports and/or detail cleanup",
+      "support_count": 3,
+      "tiny_material_details_removed": 0,
+      "undersized_cut_details_removed": 0
+    },
+    {
+      "as_supplied": "fails: floating material or undersized cuts",
+      "final_status": "works after automatic changes",
+      "longest_support_mm": 4.236,
+      "object": "nautical symbols",
+      "resolution": "retained with stencil supports and/or detail cleanup",
+      "support_count": 6,
+      "tiny_material_details_removed": 2,
+      "undersized_cut_details_removed": 0
+    },
+    {
+      "as_supplied": "fails: floating material or undersized cuts",
+      "final_status": "works after automatic changes",
+      "longest_support_mm": 1.339,
+      "object": "quote and dividers",
+      "resolution": "retained with stencil supports and/or detail cleanup",
+      "support_count": 1,
+      "tiny_material_details_removed": 26,
+      "undersized_cut_details_removed": 0
+    },
+    {
+      "as_supplied": "fails: floating material or undersized cuts",
+      "final_status": "works after automatic changes",
+      "longest_support_mm": 0.0,
+      "object": "rope border",
+      "resolution": "retained with stencil supports and/or detail cleanup",
+      "support_count": 0,
+      "tiny_material_details_removed": 0,
+      "undersized_cut_details_removed": 1
+    },
+    {
+      "as_supplied": "fails: floating material or undersized cuts",
+      "final_status": "works after automatic changes",
+      "longest_support_mm": 1.473,
+      "object": "sailboat and waves",
+      "resolution": "retained with stencil supports and/or detail cleanup",
+      "support_count": 1,
+      "tiny_material_details_removed": 1,
+      "undersized_cut_details_removed": 0
+    },
+    {
+      "as_supplied": "fails: floating material or undersized cuts",
+      "final_status": "works after automatic changes",
+      "longest_support_mm": 1.644,
       "object": "skyline and animals",
-      "resolution": "retained with stencil supports and/or tiny-detail cleanup",
-      "support_count": 26,
-      "tiny_material_details_removed": 3,
+      "resolution": "retained with stencil supports and/or detail cleanup",
+      "support_count": 2,
+      "tiny_material_details_removed": 0,
       "undersized_cut_details_removed": 0
     },
     {
@@ -1466,83 +621,50 @@
       "final_status": "works after automatic changes",
       "longest_support_mm": 0.0,
       "object": "tropical island",
-      "resolution": "retained with stencil supports and/or tiny-detail cleanup",
+      "resolution": "retained with stencil supports and/or detail cleanup",
       "support_count": 0,
-      "tiny_material_details_removed": 5,
+      "tiny_material_details_removed": 1,
       "undersized_cut_details_removed": 0
     },
     {
       "as_supplied": "fails: floating material or undersized cuts",
       "final_status": "works after automatic changes",
-      "longest_support_mm": 5.371,
+      "longest_support_mm": 0.0,
       "object": "yacht and lower waves",
-      "resolution": "retained with stencil supports and/or tiny-detail cleanup",
-      "support_count": 18,
-      "tiny_material_details_removed": 0,
+      "resolution": "retained with stencil supports and/or detail cleanup",
+      "support_count": 0,
+      "tiny_material_details_removed": 1,
       "undersized_cut_details_removed": 0
     }
   ],
-  "pixels_per_mm": 2.048,
+  "pixels_per_mm": 6.71916,
   "rejected_cut_details": [
     {
-      "area_mm2": 1.9073486328125,
-      "reason": "cut width below minimum",
+      "area_mm2": 5.714651184082031,
+      "reason": "cut area below minimum for 12 inch plate",
       "region": "rope border",
-      "width_mm": 0.9765625
-    },
-    {
-      "area_mm2": 2.384185791015625,
-      "reason": "cut width below minimum",
-      "region": "globe and hiker",
-      "width_mm": 0.9765625
-    },
-    {
-      "area_mm2": 2.1457672119140625,
-      "reason": "cut width below minimum",
-      "region": "rope border",
-      "width_mm": 0.9765625
-    },
-    {
-      "area_mm2": 0.95367431640625,
-      "reason": "cut area below minimum",
-      "region": "rope border",
-      "width_mm": 0.9765625
-    },
-    {
-      "area_mm2": 0.7152557373046875,
-      "reason": "cut area below minimum",
-      "region": "rope border",
-      "width_mm": 0.9765625
-    },
-    {
-      "area_mm2": 1.6689300537109375,
-      "reason": "cut width below minimum",
-      "region": "rope border",
-      "width_mm": 0.9765625
-    },
-    {
-      "area_mm2": 2.1457672119140625,
-      "reason": "cut width below minimum",
-      "region": "rope border",
-      "width_mm": 0.9765625
+      "width_mm": 1.2492334831506013
     }
   ],
   "settings": {
-    "diameter_mm": 500.0,
-    "minimum_cut_area_mm2": 1.5,
-    "minimum_cut_width_mm": 1.0,
-    "minimum_island_area_mm2": 3.0,
-    "review_support_length_mm": 12.0,
-    "simplify_mm": 0.25,
-    "solid_rim_mm": 15.0,
-    "support_width_mm": 3.0,
-    "threshold": 150
+    "diameter_mm": 304.8,
+    "minimum_cut_area_mm2": 14.0,
+    "minimum_cut_width_mm": 2.0,
+    "minimum_island_area_mm2": 12.0,
+    "review_support_length_mm": 8.0,
+    "silhouette_close_mm": 1.0,
+    "silhouette_open_mm": 0.7,
+    "simplify_mm": 0.7,
+    "solid_rim_mm": 10.0,
+    "support_width_mm": 2.8,
+    "threshold": 160,
+    "working_pixels": 2048
   },
-  "solid_rim_mm": 15.0,
-  "source": "fabrication/waterjet/waterjet-source-revised.png",
-  "source_pixels": 1024,
-  "support_count": 88,
-  "support_width_mm": 3.0,
-  "tiny_material_details_removed": 16,
-  "undersized_cut_details_removed": 7
+  "solid_rim_mm": 10.0,
+  "source": "fabrication/waterjet/waterjet-source-12in.png",
+  "source_pixels": 2048,
+  "support_count": 16,
+  "support_width_mm": 2.8,
+  "tiny_material_details_removed": 35,
+  "undersized_cut_details_removed": 1
 }

@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Build and assess white-material/black-cut waterjet artwork.
+"""Build 12-inch waterjet stencil artwork from white-plate / black-cut art.
 
-The source convention is strict: white is retained plate and black is a
-through-cut.  The builder removes the legacy outside border, rejects cuts that
-are too small for the stated process, stencils every trapped white island back
-to the plate, and exports closed SVG/DXF geometry plus an object-level report.
+The builder is tuned for a nominal 12 inch (304.8 mm) circular plate. It:
+* removes the legacy outside black border around the rope;
+* simplifies thin illustrative cuts into bold silhouettes the eye can read;
+* rejects features too small or narrow to cut cleanly at this size;
+* adds only the stencil supports needed to keep one connected plate;
+* exports closed SVG/DXF geometry plus an object-level assessment.
 """
 
 from __future__ import annotations
@@ -22,18 +24,24 @@ import numpy as np
 from PIL import Image
 from scipy.spatial import cKDTree
 
+INCH_MM = 25.4
+DEFAULT_DIAMETER_MM = 12.0 * INCH_MM  # 304.8 mm
+
 
 @dataclass(frozen=True)
 class Settings:
-    diameter_mm: float = 500.0
-    threshold: int = 150
-    solid_rim_mm: float = 15.0
-    support_width_mm: float = 3.0
-    minimum_cut_area_mm2: float = 1.5
-    minimum_cut_width_mm: float = 1.0
-    minimum_island_area_mm2: float = 3.0
-    simplify_mm: float = 0.25
-    review_support_length_mm: float = 12.0
+    diameter_mm: float = DEFAULT_DIAMETER_MM
+    threshold: int = 160
+    solid_rim_mm: float = 10.0
+    support_width_mm: float = 2.5
+    minimum_cut_area_mm2: float = 12.0
+    minimum_cut_width_mm: float = 1.8
+    minimum_island_area_mm2: float = 10.0
+    simplify_mm: float = 0.6
+    review_support_length_mm: float = 8.0
+    silhouette_open_mm: float = 0.9
+    silhouette_close_mm: float = 1.1
+    working_pixels: int = 2048
 
 
 @dataclass(frozen=True)
@@ -54,12 +62,19 @@ class IslandResolution:
     to_xy_mm: tuple[float, float] | None
 
 
-def load_grayscale(path: Path) -> np.ndarray:
+def load_grayscale(path: Path, working_pixels: int) -> np.ndarray:
     rgba = np.asarray(Image.open(path).convert("RGBA"), dtype=np.uint8)
     alpha = rgba[:, :, 3:4].astype(np.float32) / 255.0
     rgb = rgba[:, :, :3].astype(np.float32)
     composited = rgb * alpha + 255.0 * (1.0 - alpha)
-    return cv2.cvtColor(composited.astype(np.uint8), cv2.COLOR_RGB2GRAY)
+    gray = cv2.cvtColor(composited.astype(np.uint8), cv2.COLOR_RGB2GRAY)
+    if gray.shape[0] != working_pixels or gray.shape[1] != working_pixels:
+        gray = cv2.resize(
+            gray,
+            (working_pixels, working_pixels),
+            interpolation=cv2.INTER_AREA,
+        )
+    return gray
 
 
 def circular_mask(shape: tuple[int, int], radius: float) -> np.ndarray:
@@ -69,8 +84,14 @@ def circular_mask(shape: tuple[int, int], radius: float) -> np.ndarray:
     return (x - cx) ** 2 + (y - cy) ** 2 <= radius**2
 
 
+def odd_kernel(px: float) -> int:
+    size = max(3, int(round(px)))
+    if size % 2 == 0:
+        size += 1
+    return size
+
+
 def region_for_point(x: float, y: float, width: int, height: int) -> str:
-    """Map a feature centroid to a named object group."""
     nx, ny = x / width, y / height
     radial = math.hypot(nx - 0.5, ny - 0.5)
     if radial > 0.405:
@@ -105,6 +126,36 @@ def component_boundaries(mask: np.ndarray) -> np.ndarray:
     return np.column_stack(np.where(mask & (eroded == 0)))
 
 
+def simplify_silhouettes(
+    black: np.ndarray,
+    disc: np.ndarray,
+    px_per_mm: float,
+    settings: Settings,
+) -> np.ndarray:
+    """Turn thin illustrative cuts into bold, readable silhouettes.
+
+    Opening removes hairline cut detail that the eye cannot resolve at 12".
+    Closing merges nearby fragments into one solid cut the brain can register.
+    """
+    opened = black.astype(np.uint8)
+    open_px = settings.silhouette_open_mm * px_per_mm
+    if open_px >= 1.0:
+        kernel = cv2.getStructuringElement(
+            cv2.MORPH_ELLIPSE, (odd_kernel(open_px), odd_kernel(open_px))
+        )
+        opened = cv2.morphologyEx(opened, cv2.MORPH_OPEN, kernel)
+
+    closed = opened
+    close_px = settings.silhouette_close_mm * px_per_mm
+    if close_px >= 1.0:
+        kernel = cv2.getStructuringElement(
+            cv2.MORPH_ELLIPSE, (odd_kernel(close_px), odd_kernel(close_px))
+        )
+        closed = cv2.morphologyEx(closed, cv2.MORPH_CLOSE, kernel)
+
+    return (closed.astype(bool) & disc)
+
+
 def reject_unmanufacturable_cuts(
     black: np.ndarray,
     px_per_mm: float,
@@ -124,9 +175,9 @@ def reject_unmanufacturable_cuts(
         width_px = float(2.0 * np.max(distance[labels == component]))
         reason = ""
         if area_px < minimum_area_px:
-            reason = "cut area below minimum"
+            reason = "cut area below minimum for 12 inch plate"
         elif width_px < minimum_width_px:
-            reason = "cut width below minimum"
+            reason = "cut width below minimum for 12 inch plate"
         if not reason:
             continue
         x, y = centroids[component]
@@ -148,7 +199,6 @@ def resolve_material_islands(
     px_per_mm: float,
     settings: Settings,
 ) -> tuple[np.ndarray, np.ndarray, list[IslandResolution]]:
-    """Remove insignificant islands and bridge every retained island."""
     black = black.copy()
     support_mask = np.zeros_like(black)
     resolutions: list[IslandResolution] = []
@@ -263,8 +313,8 @@ def write_svg(
 <svg xmlns="http://www.w3.org/2000/svg"
      width="{diameter_mm:.4f}mm" height="{diameter_mm:.4f}mm"
      viewBox="0 0 {diameter_mm:.4f} {diameter_mm:.4f}">
-  <title>Waterjet medallion cut geometry</title>
-  <desc>White plate / black cut convention. Closed paths in millimetres.</desc>
+  <title>12 inch waterjet medallion</title>
+  <desc>White plate / black cut. Nominal {diameter_mm / INCH_MM:.3f} inch diameter.</desc>
   <g id="CUT_OUTER" fill="none" stroke="#ff0000" stroke-width="0.1">
     <path d="{escape(path_data(outer))}"/>
   </g>
@@ -363,10 +413,19 @@ def build_assessment(
         lengths = [i.support_length_mm for i in supports if i.support_length_mm]
         rejected_items = grouped_rejections[region]
         if lengths and max(lengths) > settings.review_support_length_mm:
-            resolution = "simplify or remove this object; required support is too long"
+            resolution = (
+                "simplify or remove this object; required support is too long "
+                "for a clean 12 inch cut"
+            )
             final_status = "manual redesign required"
+        elif len(supports) >= 8:
+            resolution = (
+                "works only with many supports; prefer a bolder silhouette rewrite "
+                "if this object must stay crisp"
+            )
+            final_status = "works after automatic changes"
         elif supports or removals or rejected_items:
-            resolution = "retained with stencil supports and/or tiny-detail cleanup"
+            resolution = "retained with stencil supports and/or detail cleanup"
             final_status = "works after automatic changes"
         else:
             resolution = "no change"
@@ -404,27 +463,47 @@ def write_report(
         for item in assessment
         if item["final_status"] == "manual redesign required"
     ]
-    recommendation = (
-        "Remove or redraw: " + ", ".join(manual) + "."
-        if manual
-        else "No complete object needs removal at this size. The generated supports "
-        "resolve every retained floating area; only tiny uncuttable details were removed."
-    )
+    crowded = [
+        item["object"]
+        for item in assessment
+        if item["support_count"] >= 8
+        and item["final_status"] != "manual redesign required"
+    ]
+    parts = []
+    if manual:
+        parts.append("Remove or redraw: " + ", ".join(manual) + ".")
+    if crowded:
+        parts.append(
+            "These areas work with supports but still read as too detailed for "
+            "12 inch plate cutting and should be redrawn as larger silhouettes: "
+            + ", ".join(crowded)
+            + "."
+        )
+    if not parts:
+        parts.append(
+            "No complete object needs removal at 12 inches. Remaining features are "
+            "bold enough to cut, with only necessary stencil supports kept."
+        )
+    recommendation = " ".join(parts)
+    inches = settings.diameter_mm / INCH_MM
     path.write_text(
         f"""# Waterjet manufacturability assessment
 
 ## Result
 
-The old outside black circle has been removed and replaced by one exact CAD
-outer profile. A **{settings.solid_rim_mm:g} mm solid plate rim** now separates
-the rope artwork from that profile. White is retained plate; black is cut out.
+Target size is **{inches:g} inch** diameter ({settings.diameter_mm:g} mm).
+The old outside black border is removed and replaced by one exact CAD outer
+profile with a **{settings.solid_rim_mm:g} mm solid plate rim** around the rope.
+White is retained plate; black is cut out.
 
-The artwork did **not** work as supplied: it contained
-{metrics["initial_material_islands"]} floating white material islands.
-The cut-ready version has one connected material component. It uses
-{metrics["support_count"]} supports at {settings.support_width_mm:g} mm nominal
-width and removes {metrics["tiny_material_details_removed"]} tiny trapped white
-details plus {metrics["undersized_cut_details_removed"]} undersized cut details.
+The artwork is processed as **bold silhouettes**, not raw illustration:
+hairline cuts are opened away and nearby fragments are closed into readable
+shapes before manufacturability checks. As supplied it still contained
+{metrics["initial_material_islands"]} floating white islands. The cut-ready
+version has one connected material component, {metrics["support_count"]}
+supports at {settings.support_width_mm:g} mm nominal width,
+{metrics["tiny_material_details_removed"]} tiny trapped white details removed,
+and {metrics["undersized_cut_details_removed"]} undersized cut details removed.
 
 {recommendation}
 
@@ -434,23 +513,19 @@ details plus {metrics["undersized_cut_details_removed"]} undersized cut details.
 |---|---:|---:|---:|---:|---|
 {chr(10).join(rows)}
 
-Areas absent from the table had no detected floating material or rejected cut
-component. Orange in `waterjet-support-plan.png` shows added plate supports;
-purple shows tiny trapped white details converted to cutout. The production
-preview remains strictly white plate / black cut.
+Orange in `waterjet-support-plan.png` is added plate support. Purple is tiny
+trapped white detail converted to cutout. The production preview remains
+strictly white plate / black cut.
 
 ## Fabrication assumptions
 
-- Outside diameter: {settings.diameter_mm:g} mm.
-- Minimum support/web: {settings.support_width_mm:g} mm.
+- Outside diameter: {inches:g} in ({settings.diameter_mm:g} mm).
+- Minimum support/web: {settings.support_width_mm:g} mm (~{settings.support_width_mm / INCH_MM:.3f} in).
 - Minimum independent cut area: {settings.minimum_cut_area_mm2:g} mm².
 - Minimum independent cut width: {settings.minimum_cut_width_mm:g} mm.
+- Silhouette open/close: {settings.silhouette_open_mm:g} / {settings.silhouette_close_mm:g} mm.
 - Kerf compensation, lead-ins, and pierce strategy remain CAM operations.
 - Cut `CUT_INNER` first and `CUT_OUTER` last.
-
-Scaling the design down also scales every support. Re-run this assessment at
-the intended diameter and have the operator simulate the toolpath before
-cutting stock.
 """,
         encoding="utf-8",
     )
@@ -481,7 +556,7 @@ def validate(
 
 
 def build(source: Path, output_dir: Path, settings: Settings) -> dict[str, object]:
-    gray = load_grayscale(source)
+    gray = load_grayscale(source, settings.working_pixels)
     height, width = gray.shape
     if height != width:
         raise ValueError("Source must be square so the outside profile stays circular")
@@ -489,16 +564,19 @@ def build(source: Path, output_dir: Path, settings: Settings) -> dict[str, objec
     profile_radius = width / 2.0 - 3.0
     disc = circular_mask(gray.shape, profile_radius)
 
-    initial_black = (gray < settings.threshold) & disc
+    raw_black = (gray < settings.threshold) & disc
     art_radius = profile_radius - settings.solid_rim_mm * px_per_mm
-    border_pixels_removed = int(np.count_nonzero(initial_black & ~circular_mask(gray.shape, art_radius)))
-    initial_black &= circular_mask(gray.shape, art_radius)
+    art_mask = circular_mask(gray.shape, art_radius)
+    border_pixels_removed = int(np.count_nonzero(raw_black & ~art_mask))
+    border_cleaned = raw_black & art_mask
 
+    simplified = simplify_silhouettes(border_cleaned, disc, px_per_mm, settings)
     initial_material_count, _, _, _ = cv2.connectedComponentsWithStats(
-        (disc & ~initial_black).astype(np.uint8), connectivity=4
+        (disc & ~simplified).astype(np.uint8), connectivity=4
     )
+
     black, rejected_before = reject_unmanufacturable_cuts(
-        initial_black, px_per_mm, settings
+        simplified, px_per_mm, settings
     )
     black, support_mask, resolutions = resolve_material_islands(
         black, disc, px_per_mm, settings
@@ -511,9 +589,7 @@ def build(source: Path, output_dir: Path, settings: Settings) -> dict[str, objec
     resolutions.extend(extra_resolutions)
     rejected = rejected_before + rejected_after
 
-    contours = extract_contours(
-        black, max(0.25, settings.simplify_mm * px_per_mm)
-    )
+    contours = extract_contours(black, max(0.35, settings.simplify_mm * px_per_mm))
     center = np.array([(width - 1) / 2.0, (height - 1) / 2.0])
 
     def to_mm(points: np.ndarray) -> np.ndarray:
@@ -534,15 +610,18 @@ def build(source: Path, output_dir: Path, settings: Settings) -> dict[str, objec
         inner_dxf.append(flipped)
 
     output_dir.mkdir(parents=True, exist_ok=True)
-    Image.fromarray(rgba_preview(initial_black, disc), mode="RGBA").save(
+    Image.fromarray(rgba_preview(border_cleaned, disc), mode="RGBA").save(
         output_dir / "waterjet-border-cleaned.png"
+    )
+    Image.fromarray(rgba_preview(simplified, disc), mode="RGBA").save(
+        output_dir / "waterjet-silhouette-pass.png"
     )
     Image.fromarray(rgba_preview(black, disc), mode="RGBA").save(
         output_dir / "waterjet-ready-preview.png"
     )
     write_analysis_preview(
         output_dir / "waterjet-support-plan.png",
-        initial_black,
+        simplified,
         black,
         support_mask,
         disc,
@@ -558,6 +637,7 @@ def build(source: Path, output_dir: Path, settings: Settings) -> dict[str, objec
         "source": str(source),
         "source_pixels": width,
         "nominal_diameter_mm": settings.diameter_mm,
+        "nominal_diameter_in": round(settings.diameter_mm / INCH_MM, 4),
         "pixels_per_mm": round(px_per_mm, 6),
         "solid_rim_mm": settings.solid_rim_mm,
         "legacy_border_pixels_removed": border_pixels_removed,
@@ -566,7 +646,9 @@ def build(source: Path, output_dir: Path, settings: Settings) -> dict[str, objec
         "support_width_mm": settings.support_width_mm,
         "longest_support_mm": round(
             max((r.support_length_mm or 0.0) for r in support_items), 4
-        ),
+        )
+        if support_items
+        else 0.0,
         "tiny_material_details_removed": len(tiny_items),
         "undersized_cut_details_removed": len(rejected),
         "settings": asdict(settings),
@@ -588,14 +670,17 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output-dir", type=Path, default=Path("fabrication/waterjet")
     )
-    parser.add_argument("--diameter-mm", type=float, default=500.0)
-    parser.add_argument("--threshold", type=int, default=150)
-    parser.add_argument("--solid-rim-mm", type=float, default=15.0)
-    parser.add_argument("--support-width-mm", type=float, default=3.0)
-    parser.add_argument("--minimum-cut-area-mm2", type=float, default=1.5)
-    parser.add_argument("--minimum-cut-width-mm", type=float, default=1.0)
-    parser.add_argument("--minimum-island-area-mm2", type=float, default=3.0)
-    parser.add_argument("--simplify-mm", type=float, default=0.25)
+    parser.add_argument("--diameter-mm", type=float, default=DEFAULT_DIAMETER_MM)
+    parser.add_argument("--threshold", type=int, default=160)
+    parser.add_argument("--solid-rim-mm", type=float, default=10.0)
+    parser.add_argument("--support-width-mm", type=float, default=2.5)
+    parser.add_argument("--minimum-cut-area-mm2", type=float, default=12.0)
+    parser.add_argument("--minimum-cut-width-mm", type=float, default=1.8)
+    parser.add_argument("--minimum-island-area-mm2", type=float, default=10.0)
+    parser.add_argument("--simplify-mm", type=float, default=0.6)
+    parser.add_argument("--silhouette-open-mm", type=float, default=0.9)
+    parser.add_argument("--silhouette-close-mm", type=float, default=1.1)
+    parser.add_argument("--working-pixels", type=int, default=2048)
     return parser.parse_args()
 
 
@@ -610,9 +695,13 @@ def main() -> None:
         minimum_cut_width_mm=args.minimum_cut_width_mm,
         minimum_island_area_mm2=args.minimum_island_area_mm2,
         simplify_mm=args.simplify_mm,
+        silhouette_open_mm=args.silhouette_open_mm,
+        silhouette_close_mm=args.silhouette_close_mm,
+        working_pixels=args.working_pixels,
     )
     metrics = build(args.source, args.output_dir, settings)
     summary_keys = (
+        "nominal_diameter_in",
         "legacy_border_pixels_removed",
         "initial_material_islands",
         "support_count",
