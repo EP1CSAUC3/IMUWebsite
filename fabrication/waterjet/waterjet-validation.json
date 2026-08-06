@@ -1,0 +1,83 @@
+{
+  "aligned_part_count": 7,
+  "aligned_parts": [
+    {
+      "dxf": "fabrication/waterjet/parts/waterjet-part-00-outer-profile.dxf",
+      "inner_cut_count": 0,
+      "part": "00-outer-profile",
+      "svg": "fabrication/waterjet/parts/waterjet-part-00-outer-profile.svg"
+    },
+    {
+      "dxf": "fabrication/waterjet/parts/waterjet-part-01-rope-border.dxf",
+      "inner_cut_count": 49,
+      "part": "01-rope-border",
+      "svg": "fabrication/waterjet/parts/waterjet-part-01-rope-border.svg"
+    },
+    {
+      "dxf": "fabrication/waterjet/parts/waterjet-part-02-quote-and-dividers.dxf",
+      "inner_cut_count": 89,
+      "part": "02-quote-and-dividers",
+      "svg": "fabrication/waterjet/parts/waterjet-part-02-quote-and-dividers.svg"
+    },
+    {
+      "dxf": "fabrication/waterjet/parts/waterjet-part-03-top-captain-mountains.dxf",
+      "inner_cut_count": 9,
+      "part": "03-top-captain-mountains",
+      "svg": "fabrication/waterjet/parts/waterjet-part-03-top-captain-mountains.svg"
+    },
+    {
+      "dxf": "fabrication/waterjet/parts/waterjet-part-04-right-nautical-plane.dxf",
+      "inner_cut_count": 10,
+      "part": "04-right-nautical-plane",
+      "svg": "fabrication/waterjet/parts/waterjet-part-04-right-nautical-plane.svg"
+    },
+    {
+      "dxf": "fabrication/waterjet/parts/waterjet-part-05-left-globe-hiker.dxf",
+      "inner_cut_count": 2,
+      "part": "05-left-globe-hiker",
+      "svg": "fabrication/waterjet/parts/waterjet-part-05-left-globe-hiker.svg"
+    },
+    {
+      "dxf": "fabrication/waterjet/parts/waterjet-part-06-bottom-scene.dxf",
+      "inner_cut_count": 13,
+      "part": "06-bottom-scene",
+      "svg": "fabrication/waterjet/parts/waterjet-part-06-bottom-scene.svg"
+    }
+  ],
+  "aligned_parts_dir": "fabrication/waterjet/parts",
+  "closed_inner_contours": 172,
+  "cut_components": 172,
+  "cut_pixels": 1010355,
+  "initial_material_islands": 0,
+  "island_resolutions": [],
+  "legacy_border_pixels_removed": 0,
+  "longest_support_mm": 0.0,
+  "material_components": 1,
+  "material_pixels": 2264549,
+  "nominal_diameter_in": 12.0,
+  "nominal_diameter_mm": 304.8,
+  "object_assessment": [],
+  "pixels_per_mm": 6.71916,
+  "rejected_cut_details": [],
+  "settings": {
+    "diameter_mm": 304.8,
+    "minimum_cut_area_mm2": 8.0,
+    "minimum_cut_width_mm": 1.2,
+    "minimum_island_area_mm2": 5.0,
+    "review_support_length_mm": 8.0,
+    "silhouette_close_mm": 0.0,
+    "silhouette_open_mm": 0.0,
+    "simplify_mm": 0.35,
+    "solid_rim_mm": 8.0,
+    "support_width_mm": 2.5,
+    "threshold": 160,
+    "working_pixels": 2048
+  },
+  "solid_rim_mm": 8.0,
+  "source": "fabrication/waterjet/waterjet-final-user.png",
+  "source_pixels": 2048,
+  "support_count": 0,
+  "support_width_mm": 2.5,
+  "tiny_material_details_removed": 0,
+  "undersized_cut_details_removed": 0
+}

@@ -1,0 +1,1035 @@
+{
+  "alignment_rule": "Every part shares the same absolute origin and canvas. Import each file at origin with no transform. Cut ALIGN never.",
+  "canvas_mm": [
+    304.8,
+    304.8
+  ],
+  "origin": [
+    0.0,
+    0.0
+  ],
+  "parts": [
+    {
+      "canvas_mm": [
+        304.8,
+        304.8
+      ],
+      "centroids_mm": [],
+      "contour_indices": [],
+      "dxf": "fabrication/waterjet/parts/waterjet-part-00-outer-profile.dxf",
+      "includes_align_reference": false,
+      "includes_outer_profile": true,
+      "inner_cut_count": 0,
+      "origin": [
+        0.0,
+        0.0
+      ],
+      "part": "00-outer-profile",
+      "preview": "fabrication/waterjet/parts/waterjet-part-00-outer-profile-preview.png",
+      "summary": "Outside plate profile only. Cut this last.",
+      "svg": "fabrication/waterjet/parts/waterjet-part-00-outer-profile.svg"
+    },
+    {
+      "canvas_mm": [
+        304.8,
+        304.8
+      ],
+      "centroids_mm": [
+        {
+          "x": 148.958,
+          "y": 290.816
+        },
+        {
+          "x": 112.671,
+          "y": 288.356
+        },
+        {
+          "x": 190.79,
+          "y": 285.883
+        },
+        {
+          "x": 145.005,
+          "y": 285.675
+        },
+        {
+          "x": 192.938,
+          "y": 280.115
+        },
+        {
+          "x": 126.293,
+          "y": 277.38
+        },
+        {
+          "x": 197.836,
+          "y": 272.201
+        },
+        {
+          "x": 242.414,
+          "y": 257.178
+        },
+        {
+          "x": 59.246,
+          "y": 255.766
+        },
+        {
+          "x": 47.818,
+          "y": 239.55
+        },
+        {
+          "x": 244.671,
+          "y": 239.894
+        },
+        {
+          "x": 275.499,
+          "y": 221.405
+        },
+        {
+          "x": 250.669,
+          "y": 241.937
+        },
+        {
+          "x": 21.629,
+          "y": 205.852
+        },
+        {
+          "x": 281.717,
+          "y": 208.343
+        },
+        {
+          "x": 287.325,
+          "y": 192.051
+        },
+        {
+          "x": 15.996,
+          "y": 189.716
+        },
+        {
+          "x": 291.49,
+          "y": 175.636
+        },
+        {
+          "x": 12.812,
+          "y": 172.625
+        },
+        {
+          "x": 23.441,
+          "y": 171.581
+        },
+        {
+          "x": 293.058,
+          "y": 158.843
+        },
+        {
+          "x": 11.389,
+          "y": 155.967
+        },
+        {
+          "x": 293.033,
+          "y": 143.071
+        },
+        {
+          "x": 12.066,
+          "y": 139.588
+        },
+        {
+          "x": 14.553,
+          "y": 123.243
+        },
+        {
+          "x": 290.645,
+          "y": 125.681
+        },
+        {
+          "x": 19.33,
+          "y": 106.629
+        },
+        {
+          "x": 286.017,
+          "y": 108.814
+        },
+        {
+          "x": 25.663,
+          "y": 91.425
+        },
+        {
+          "x": 279.425,
+          "y": 92.644
+        },
+        {
+          "x": 33.873,
+          "y": 76.925
+        },
+        {
+          "x": 271.389,
+          "y": 78.514
+        },
+        {
+          "x": 43.831,
+          "y": 63.193
+        },
+        {
+          "x": 263.043,
+          "y": 66.237
+        },
+        {
+          "x": 54.684,
+          "y": 51.123
+        },
+        {
+          "x": 251.114,
+          "y": 52.716
+        },
+        {
+          "x": 66.921,
+          "y": 40.7
+        },
+        {
+          "x": 239.795,
+          "y": 42.342
+        },
+        {
+          "x": 81.36,
+          "y": 31.037
+        },
+        {
+          "x": 226.233,
+          "y": 32.636
+        },
+        {
+          "x": 133.934,
+          "y": 27.145
+        },
+        {
+          "x": 95.779,
+          "y": 23.584
+        },
+        {
+          "x": 210.475,
+          "y": 24.32
+        },
+        {
+          "x": 111.874,
+          "y": 17.812
+        },
+        {
+          "x": 195.079,
+          "y": 18.605
+        },
+        {
+          "x": 128.766,
+          "y": 14.081
+        },
+        {
+          "x": 178.916,
+          "y": 14.34
+        },
+        {
+          "x": 161.505,
+          "y": 12.14
+        },
+        {
+          "x": 145.633,
+          "y": 12.115
+        }
+      ],
+      "contour_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        9,
+        10,
+        13,
+        14,
+        15,
+        16,
+        23,
+        24,
+        29,
+        30,
+        43,
+        44,
+        65,
+        67,
+        72,
+        99,
+        100,
+        132,
+        134,
+        137,
+        138,
+        141,
+        142,
+        145,
+        146,
+        149,
+        150,
+        153,
+        154,
+        155,
+        156,
+        160,
+        161,
+        162,
+        163,
+        164,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171
+      ],
+      "dxf": "fabrication/waterjet/parts/waterjet-part-01-rope-border.dxf",
+      "includes_align_reference": true,
+      "includes_outer_profile": false,
+      "inner_cut_count": 49,
+      "origin": [
+        0.0,
+        0.0
+      ],
+      "part": "01-rope-border",
+      "preview": "fabrication/waterjet/parts/waterjet-part-01-rope-border-preview.png",
+      "summary": "Braided rope border cutouts.",
+      "svg": "fabrication/waterjet/parts/waterjet-part-01-rope-border.svg"
+    },
+    {
+      "canvas_mm": [
+        304.8,
+        304.8
+      ],
+      "centroids_mm": [
+        {
+          "x": 200.218,
+          "y": 196.721
+        },
+        {
+          "x": 157.886,
+          "y": 196.377
+        },
+        {
+          "x": 173.156,
+          "y": 196.674
+        },
+        {
+          "x": 112.919,
+          "y": 195.967
+        },
+        {
+          "x": 194.742,
+          "y": 185.562
+        },
+        {
+          "x": 190.075,
+          "y": 192.299
+        },
+        {
+          "x": 185.556,
+          "y": 185.947
+        },
+        {
+          "x": 165.237,
+          "y": 191.159
+        },
+        {
+          "x": 151.837,
+          "y": 190.659
+        },
+        {
+          "x": 138.182,
+          "y": 185.705
+        },
+        {
+          "x": 133.379,
+          "y": 191.348
+        },
+        {
+          "x": 123.11,
+          "y": 191.664
+        },
+        {
+          "x": 116.328,
+          "y": 188.361
+        },
+        {
+          "x": 179.608,
+          "y": 185.446
+        },
+        {
+          "x": 177.017,
+          "y": 191.763
+        },
+        {
+          "x": 178.364,
+          "y": 175.876
+        },
+        {
+          "x": 211.397,
+          "y": 174.771
+        },
+        {
+          "x": 219.943,
+          "y": 164.994
+        },
+        {
+          "x": 215.664,
+          "y": 170.702
+        },
+        {
+          "x": 166.442,
+          "y": 165.013
+        },
+        {
+          "x": 162.102,
+          "y": 171.357
+        },
+        {
+          "x": 157.494,
+          "y": 164.901
+        },
+        {
+          "x": 150.758,
+          "y": 170.163
+        },
+        {
+          "x": 137.74,
+          "y": 165.184
+        },
+        {
+          "x": 133.369,
+          "y": 171.416
+        },
+        {
+          "x": 128.835,
+          "y": 164.864
+        },
+        {
+          "x": 122.373,
+          "y": 169.976
+        },
+        {
+          "x": 116.217,
+          "y": 169.382
+        },
+        {
+          "x": 106.387,
+          "y": 170.642
+        },
+        {
+          "x": 100.053,
+          "y": 170.207
+        },
+        {
+          "x": 204.132,
+          "y": 170.685
+        },
+        {
+          "x": 199.095,
+          "y": 169.839
+        },
+        {
+          "x": 185.048,
+          "y": 164.383
+        },
+        {
+          "x": 182.164,
+          "y": 170.058
+        },
+        {
+          "x": 172.232,
+          "y": 165.678
+        },
+        {
+          "x": 122.238,
+          "y": 154.436
+        },
+        {
+          "x": 93.664,
+          "y": 154.061
+        },
+        {
+          "x": 200.969,
+          "y": 154.1
+        },
+        {
+          "x": 199.941,
+          "y": 148.056
+        },
+        {
+          "x": 120.766,
+          "y": 148.444
+        },
+        {
+          "x": 92.107,
+          "y": 148.317
+        },
+        {
+          "x": 223.167,
+          "y": 148.355
+        },
+        {
+          "x": 215.44,
+          "y": 149.05
+        },
+        {
+          "x": 208.486,
+          "y": 149.415
+        },
+        {
+          "x": 200.943,
+          "y": 142.154
+        },
+        {
+          "x": 194.296,
+          "y": 149.014
+        },
+        {
+          "x": 185.416,
+          "y": 148.183
+        },
+        {
+          "x": 178.998,
+          "y": 148.858
+        },
+        {
+          "x": 170.894,
+          "y": 143.847
+        },
+        {
+          "x": 166.273,
+          "y": 149.207
+        },
+        {
+          "x": 160.58,
+          "y": 146.146
+        },
+        {
+          "x": 151.596,
+          "y": 142.938
+        },
+        {
+          "x": 146.747,
+          "y": 148.547
+        },
+        {
+          "x": 136.603,
+          "y": 148.487
+        },
+        {
+          "x": 129.749,
+          "y": 149.464
+        },
+        {
+          "x": 122.099,
+          "y": 142.343
+        },
+        {
+          "x": 115.591,
+          "y": 148.34
+        },
+        {
+          "x": 107.861,
+          "y": 143.585
+        },
+        {
+          "x": 102.566,
+          "y": 146.477
+        },
+        {
+          "x": 93.44,
+          "y": 142.343
+        },
+        {
+          "x": 86.887,
+          "y": 148.325
+        },
+        {
+          "x": 212.871,
+          "y": 131.876
+        },
+        {
+          "x": 145.31,
+          "y": 131.857
+        },
+        {
+          "x": 225.721,
+          "y": 132.068
+        },
+        {
+          "x": 151.318,
+          "y": 130.812
+        },
+        {
+          "x": 224.29,
+          "y": 125.29
+        },
+        {
+          "x": 211.41,
+          "y": 125.881
+        },
+        {
+          "x": 143.942,
+          "y": 125.881
+        },
+        {
+          "x": 112.554,
+          "y": 129.77
+        },
+        {
+          "x": 225.615,
+          "y": 120.028
+        },
+        {
+          "x": 219.286,
+          "y": 126.025
+        },
+        {
+          "x": 212.647,
+          "y": 120.065
+        },
+        {
+          "x": 206.27,
+          "y": 126.04
+        },
+        {
+          "x": 198.191,
+          "y": 125.988
+        },
+        {
+          "x": 191.821,
+          "y": 126.025
+        },
+        {
+          "x": 179.833,
+          "y": 120.83
+        },
+        {
+          "x": 175.421,
+          "y": 127.561
+        },
+        {
+          "x": 171.226,
+          "y": 120.532
+        },
+        {
+          "x": 159.527,
+          "y": 120.55
+        },
+        {
+          "x": 155.385,
+          "y": 125.786
+        },
+        {
+          "x": 145.161,
+          "y": 119.764
+        },
+        {
+          "x": 138.742,
+          "y": 126.025
+        },
+        {
+          "x": 131.776,
+          "y": 121.626
+        },
+        {
+          "x": 126.937,
+          "y": 125.24
+        },
+        {
+          "x": 117.291,
+          "y": 127.856
+        },
+        {
+          "x": 104.001,
+          "y": 125.98
+        },
+        {
+          "x": 97.831,
+          "y": 125.93
+        },
+        {
+          "x": 83.141,
+          "y": 125.992
+        },
+        {
+          "x": 165.488,
+          "y": 121.455
+        }
+      ],
+      "contour_indices": [
+        25,
+        26,
+        27,
+        28,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        69,
+        70,
+        71,
+        74,
+        75,
+        76,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        102,
+        103,
+        104,
+        105,
+        107,
+        108,
+        109,
+        110,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        133
+      ],
+      "dxf": "fabrication/waterjet/parts/waterjet-part-02-quote-and-dividers.dxf",
+      "includes_align_reference": true,
+      "includes_outer_profile": false,
+      "inner_cut_count": 89,
+      "origin": [
+        0.0,
+        0.0
+      ],
+      "part": "02-quote-and-dividers",
+      "preview": "fabrication/waterjet/parts/waterjet-part-02-quote-and-dividers-preview.png",
+      "summary": "Central quote lettering and divider cuts.",
+      "svg": "fabrication/waterjet/parts/waterjet-part-02-quote-and-dividers.svg"
+    },
+    {
+      "canvas_mm": [
+        304.8,
+        304.8
+      ],
+      "centroids_mm": [
+        {
+          "x": 50.997,
+          "y": 119.763
+        },
+        {
+          "x": 44.898,
+          "y": 99.407
+        },
+        {
+          "x": 54.042,
+          "y": 92.205
+        },
+        {
+          "x": 55.964,
+          "y": 108.296
+        },
+        {
+          "x": 91.798,
+          "y": 60.751
+        },
+        {
+          "x": 95.606,
+          "y": 77.672
+        },
+        {
+          "x": 103.844,
+          "y": 54.39
+        },
+        {
+          "x": 125.249,
+          "y": 35.56
+        },
+        {
+          "x": 169.194,
+          "y": 53.45
+        }
+      ],
+      "contour_indices": [
+        135,
+        139,
+        140,
+        144,
+        151,
+        152,
+        158,
+        159,
+        165
+      ],
+      "dxf": "fabrication/waterjet/parts/waterjet-part-03-top-captain-mountains.dxf",
+      "includes_align_reference": true,
+      "includes_outer_profile": false,
+      "inner_cut_count": 9,
+      "origin": [
+        0.0,
+        0.0
+      ],
+      "part": "03-top-captain-mountains",
+      "preview": "fabrication/waterjet/parts/waterjet-part-03-top-captain-mountains-preview.png",
+      "summary": "Captain portrait plus mountains and forest.",
+      "svg": "fabrication/waterjet/parts/waterjet-part-03-top-captain-mountains.svg"
+    },
+    {
+      "canvas_mm": [
+        304.8,
+        304.8
+      ],
+      "centroids_mm": [
+        {
+          "x": 229.815,
+          "y": 142.111
+        },
+        {
+          "x": 253.062,
+          "y": 138.435
+        },
+        {
+          "x": 231.753,
+          "y": 130.719
+        },
+        {
+          "x": 239.981,
+          "y": 120.7
+        },
+        {
+          "x": 235.69,
+          "y": 125.7
+        },
+        {
+          "x": 265.824,
+          "y": 123.731
+        },
+        {
+          "x": 201.474,
+          "y": 99.265
+        },
+        {
+          "x": 235.176,
+          "y": 86.56
+        },
+        {
+          "x": 203.161,
+          "y": 75.349
+        },
+        {
+          "x": 209.947,
+          "y": 51.915
+        }
+      ],
+      "contour_indices": [
+        78,
+        101,
+        106,
+        111,
+        112,
+        136,
+        143,
+        147,
+        148,
+        157
+      ],
+      "dxf": "fabrication/waterjet/parts/waterjet-part-04-right-nautical-plane.dxf",
+      "includes_align_reference": true,
+      "includes_outer_profile": false,
+      "inner_cut_count": 10,
+      "origin": [
+        0.0,
+        0.0
+      ],
+      "part": "04-right-nautical-plane",
+      "preview": "fabrication/waterjet/parts/waterjet-part-04-right-nautical-plane-preview.png",
+      "summary": "Airplane, nautical symbols, and tropical island.",
+      "svg": "fabrication/waterjet/parts/waterjet-part-04-right-nautical-plane.svg"
+    },
+    {
+      "canvas_mm": [
+        304.8,
+        304.8
+      ],
+      "centroids_mm": [
+        {
+          "x": 35.761,
+          "y": 167.883
+        },
+        {
+          "x": 64.736,
+          "y": 175.186
+        }
+      ],
+      "contour_indices": [
+        64,
+        73
+      ],
+      "dxf": "fabrication/waterjet/parts/waterjet-part-05-left-globe-hiker.dxf",
+      "includes_align_reference": true,
+      "includes_outer_profile": false,
+      "inner_cut_count": 2,
+      "origin": [
+        0.0,
+        0.0
+      ],
+      "part": "05-left-globe-hiker",
+      "preview": "fabrication/waterjet/parts/waterjet-part-05-left-globe-hiker-preview.png",
+      "summary": "Globe, hiker, flag, and left palms.",
+      "svg": "fabrication/waterjet/parts/waterjet-part-05-left-globe-hiker.svg"
+    },
+    {
+      "canvas_mm": [
+        304.8,
+        304.8
+      ],
+      "centroids_mm": [
+        {
+          "x": 143.377,
+          "y": 273.35
+        },
+        {
+          "x": 209.326,
+          "y": 261.97
+        },
+        {
+          "x": 214.544,
+          "y": 250.285
+        },
+        {
+          "x": 101.353,
+          "y": 260.48
+        },
+        {
+          "x": 255.054,
+          "y": 210.39
+        },
+        {
+          "x": 180.575,
+          "y": 236.402
+        },
+        {
+          "x": 205.285,
+          "y": 222.624
+        },
+        {
+          "x": 141.417,
+          "y": 227.657
+        },
+        {
+          "x": 251.658,
+          "y": 203.751
+        },
+        {
+          "x": 61.971,
+          "y": 217.335
+        },
+        {
+          "x": 236.009,
+          "y": 156.071
+        },
+        {
+          "x": 229.85,
+          "y": 154.191
+        },
+        {
+          "x": 257.031,
+          "y": 168.194
+        }
+      ],
+      "contour_indices": [
+        6,
+        8,
+        11,
+        12,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        66,
+        68,
+        77
+      ],
+      "dxf": "fabrication/waterjet/parts/waterjet-part-06-bottom-scene.dxf",
+      "includes_align_reference": true,
+      "includes_outer_profile": false,
+      "inner_cut_count": 13,
+      "origin": [
+        0.0,
+        0.0
+      ],
+      "part": "06-bottom-scene",
+      "preview": "fabrication/waterjet/parts/waterjet-part-06-bottom-scene-preview.png",
+      "summary": "Skyline, animals, yacht, sailboat, and lower waves.",
+      "svg": "fabrication/waterjet/parts/waterjet-part-06-bottom-scene.svg"
+    }
+  ],
+  "recommended_toolpath_order": [
+    "01-rope-border",
+    "02-quote-and-dividers",
+    "03-top-captain-mountains",
+    "04-right-nautical-plane",
+    "05-left-globe-hiker",
+    "06-bottom-scene",
+    "00-outer-profile"
+  ],
+  "units": "millimetres"
+}
