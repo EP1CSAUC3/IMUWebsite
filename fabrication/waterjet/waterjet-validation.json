@@ -9,194 +9,74 @@
     },
     {
       "dxf": "fabrication/waterjet/parts/waterjet-part-01-rope-border.dxf",
-      "inner_cut_count": 39,
+      "inner_cut_count": 49,
       "part": "01-rope-border",
       "svg": "fabrication/waterjet/parts/waterjet-part-01-rope-border.svg"
     },
     {
       "dxf": "fabrication/waterjet/parts/waterjet-part-02-quote-and-dividers.dxf",
-      "inner_cut_count": 34,
+      "inner_cut_count": 89,
       "part": "02-quote-and-dividers",
       "svg": "fabrication/waterjet/parts/waterjet-part-02-quote-and-dividers.svg"
     },
     {
       "dxf": "fabrication/waterjet/parts/waterjet-part-03-top-captain-mountains.dxf",
-      "inner_cut_count": 2,
+      "inner_cut_count": 9,
       "part": "03-top-captain-mountains",
       "svg": "fabrication/waterjet/parts/waterjet-part-03-top-captain-mountains.svg"
     },
     {
       "dxf": "fabrication/waterjet/parts/waterjet-part-04-right-nautical-plane.dxf",
-      "inner_cut_count": 9,
+      "inner_cut_count": 10,
       "part": "04-right-nautical-plane",
       "svg": "fabrication/waterjet/parts/waterjet-part-04-right-nautical-plane.svg"
     },
     {
       "dxf": "fabrication/waterjet/parts/waterjet-part-05-left-globe-hiker.dxf",
-      "inner_cut_count": 6,
+      "inner_cut_count": 2,
       "part": "05-left-globe-hiker",
       "svg": "fabrication/waterjet/parts/waterjet-part-05-left-globe-hiker.svg"
     },
     {
       "dxf": "fabrication/waterjet/parts/waterjet-part-06-bottom-scene.dxf",
-      "inner_cut_count": 7,
+      "inner_cut_count": 13,
       "part": "06-bottom-scene",
       "svg": "fabrication/waterjet/parts/waterjet-part-06-bottom-scene.svg"
     }
   ],
   "aligned_parts_dir": "fabrication/waterjet/parts",
-  "closed_inner_contours": 97,
-  "cut_components": 97,
-  "cut_pixels": 1268021,
-  "initial_material_islands": 51,
+  "closed_inner_contours": 172,
+  "cut_components": 172,
+  "cut_pixels": 1010358,
+  "initial_material_islands": 46,
   "island_resolutions": [
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 10.609759368896485,
+      "area_mm2": 0.5315954589843751,
       "from_xy_mm": null,
-      "region": "airplane and route",
+      "region": "captain portrait",
       "support_length_mm": null,
       "to_xy_mm": null
     },
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 9.391519775390625,
+      "area_mm2": 5.005857238769532,
       "from_xy_mm": null,
-      "region": "quote and dividers",
+      "region": "mountains and forest",
       "support_length_mm": null,
       "to_xy_mm": null
     },
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 8.926373748779298,
+      "area_mm2": 0.5315954589843751,
       "from_xy_mm": null,
-      "region": "quote and dividers",
+      "region": "rope border",
       "support_length_mm": null,
       "to_xy_mm": null
     },
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 8.793474884033204,
-      "from_xy_mm": null,
-      "region": "nautical symbols",
-      "support_length_mm": null,
-      "to_xy_mm": null
-    },
-    {
-      "action": "remove tiny trapped detail",
-      "area_mm2": 7.95178207397461,
-      "from_xy_mm": null,
-      "region": "quote and dividers",
-      "support_length_mm": null,
-      "to_xy_mm": null
-    },
-    {
-      "action": "remove tiny trapped detail",
-      "area_mm2": 6.866441345214844,
-      "from_xy_mm": null,
-      "region": "quote and dividers",
-      "support_length_mm": null,
-      "to_xy_mm": null
-    },
-    {
-      "action": "remove tiny trapped detail",
-      "area_mm2": 7.663834533691407,
-      "from_xy_mm": null,
-      "region": "nautical symbols",
-      "support_length_mm": null,
-      "to_xy_mm": null
-    },
-    {
-      "action": "remove tiny trapped detail",
-      "area_mm2": 4.274913482666016,
-      "from_xy_mm": null,
-      "region": "quote and dividers",
-      "support_length_mm": null,
-      "to_xy_mm": null
-    },
-    {
-      "action": "remove tiny trapped detail",
-      "area_mm2": 7.929632263183595,
-      "from_xy_mm": null,
-      "region": "quote and dividers",
-      "support_length_mm": null,
-      "to_xy_mm": null
-    },
-    {
-      "action": "remove tiny trapped detail",
-      "area_mm2": 9.72376693725586,
-      "from_xy_mm": null,
-      "region": "quote and dividers",
-      "support_length_mm": null,
-      "to_xy_mm": null
-    },
-    {
-      "action": "remove tiny trapped detail",
-      "area_mm2": 9.147871856689454,
-      "from_xy_mm": null,
-      "region": "tropical island",
-      "support_length_mm": null,
-      "to_xy_mm": null
-    },
-    {
-      "action": "remove tiny trapped detail",
-      "area_mm2": 8.151130371093751,
-      "from_xy_mm": null,
-      "region": "quote and dividers",
-      "support_length_mm": null,
-      "to_xy_mm": null
-    },
-    {
-      "action": "remove tiny trapped detail",
-      "area_mm2": 8.239729614257813,
-      "from_xy_mm": null,
-      "region": "quote and dividers",
-      "support_length_mm": null,
-      "to_xy_mm": null
-    },
-    {
-      "action": "remove tiny trapped detail",
-      "area_mm2": 9.52441864013672,
-      "from_xy_mm": null,
-      "region": "quote and dividers",
-      "support_length_mm": null,
-      "to_xy_mm": null
-    },
-    {
-      "action": "remove tiny trapped detail",
-      "area_mm2": 6.733542480468751,
-      "from_xy_mm": null,
-      "region": "quote and dividers",
-      "support_length_mm": null,
-      "to_xy_mm": null
-    },
-    {
-      "action": "remove tiny trapped detail",
-      "area_mm2": 9.125722045898438,
-      "from_xy_mm": null,
-      "region": "quote and dividers",
-      "support_length_mm": null,
-      "to_xy_mm": null
-    },
-    {
-      "action": "remove tiny trapped detail",
-      "area_mm2": 9.258620910644533,
-      "from_xy_mm": null,
-      "region": "quote and dividers",
-      "support_length_mm": null,
-      "to_xy_mm": null
-    },
-    {
-      "action": "remove tiny trapped detail",
-      "area_mm2": 8.926373748779298,
-      "from_xy_mm": null,
-      "region": "quote and dividers",
-      "support_length_mm": null,
-      "to_xy_mm": null
-    },
-    {
-      "action": "remove tiny trapped detail",
-      "area_mm2": 8.284029235839844,
+      "area_mm2": 1.018891296386719,
       "from_xy_mm": null,
       "region": "globe and hiker",
       "support_length_mm": null,
@@ -204,39 +84,7 @@
     },
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 8.173280181884767,
-      "from_xy_mm": null,
-      "region": "quote and dividers",
-      "support_length_mm": null,
-      "to_xy_mm": null
-    },
-    {
-      "action": "remove tiny trapped detail",
-      "area_mm2": 6.644943237304688,
-      "from_xy_mm": null,
-      "region": "quote and dividers",
-      "support_length_mm": null,
-      "to_xy_mm": null
-    },
-    {
-      "action": "remove tiny trapped detail",
-      "area_mm2": 6.201947021484376,
-      "from_xy_mm": null,
-      "region": "quote and dividers",
-      "support_length_mm": null,
-      "to_xy_mm": null
-    },
-    {
-      "action": "remove tiny trapped detail",
-      "area_mm2": 9.745916748046875,
-      "from_xy_mm": null,
-      "region": "quote and dividers",
-      "support_length_mm": null,
-      "to_xy_mm": null
-    },
-    {
-      "action": "remove tiny trapped detail",
-      "area_mm2": 8.682725830078125,
+      "area_mm2": 0.5315954589843751,
       "from_xy_mm": null,
       "region": "globe and hiker",
       "support_length_mm": null,
@@ -244,71 +92,55 @@
     },
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 8.85992431640625,
+      "area_mm2": 0.5315954589843751,
       "from_xy_mm": null,
-      "region": "quote and dividers",
+      "region": "globe and hiker",
       "support_length_mm": null,
       "to_xy_mm": null
     },
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 9.701617126464845,
+      "area_mm2": 0.7973931884765626,
       "from_xy_mm": null,
-      "region": "quote and dividers",
+      "region": "globe and hiker",
       "support_length_mm": null,
       "to_xy_mm": null
     },
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 9.236471099853517,
+      "area_mm2": 1.9270335388183595,
       "from_xy_mm": null,
-      "region": "quote and dividers",
+      "region": "desert and landmarks",
       "support_length_mm": null,
       "to_xy_mm": null
     },
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 6.046898345947266,
+      "area_mm2": 0.37654678344726566,
       "from_xy_mm": null,
-      "region": "quote and dividers",
+      "region": "desert and landmarks",
       "support_length_mm": null,
       "to_xy_mm": null
     },
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 6.113347778320313,
+      "area_mm2": 0.4872958374023438,
       "from_xy_mm": null,
-      "region": "quote and dividers",
+      "region": "desert and landmarks",
       "support_length_mm": null,
       "to_xy_mm": null
     },
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 7.043639831542969,
+      "area_mm2": 1.3732882690429689,
       "from_xy_mm": null,
-      "region": "quote and dividers",
+      "region": "desert and landmarks",
       "support_length_mm": null,
       "to_xy_mm": null
     },
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 8.394778289794923,
-      "from_xy_mm": null,
-      "region": "quote and dividers",
-      "support_length_mm": null,
-      "to_xy_mm": null
-    },
-    {
-      "action": "remove tiny trapped detail",
-      "area_mm2": 4.385662536621094,
-      "from_xy_mm": null,
-      "region": "quote and dividers",
-      "support_length_mm": null,
-      "to_xy_mm": null
-    },
-    {
-      "action": "remove tiny trapped detail",
-      "area_mm2": 2.6358274841308598,
+      "area_mm2": 0.5315954589843751,
       "from_xy_mm": null,
       "region": "sailboat and waves",
       "support_length_mm": null,
@@ -316,7 +148,111 @@
     },
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 2.502928619384766,
+      "area_mm2": 0.4872958374023438,
+      "from_xy_mm": null,
+      "region": "skyline and animals",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 2.5250784301757814,
+      "from_xy_mm": null,
+      "region": "skyline and animals",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 1.3511384582519532,
+      "from_xy_mm": null,
+      "region": "skyline and animals",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 3.8319172668457036,
+      "from_xy_mm": null,
+      "region": "skyline and animals",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 1.484037322998047,
+      "from_xy_mm": null,
+      "region": "sailboat and waves",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 2.2371308898925784,
+      "from_xy_mm": null,
+      "region": "sailboat and waves",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 5.7811006164550784,
+      "from_xy_mm": null,
+      "region": "desert and landmarks",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 5.7811006164550784,
+      "from_xy_mm": null,
+      "region": "desert and landmarks",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 5.936149291992188,
+      "from_xy_mm": null,
+      "region": "desert and landmarks",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 5.7811006164550784,
+      "from_xy_mm": null,
+      "region": "desert and landmarks",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 2.8351757812500002,
+      "from_xy_mm": null,
+      "region": "sailboat and waves",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 0.6201947021484375,
+      "from_xy_mm": null,
+      "region": "sailboat and waves",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 1.5947863769531252,
+      "from_xy_mm": null,
+      "region": "rope border",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 4.496411590576172,
       "from_xy_mm": null,
       "region": "yacht and lower waves",
       "support_length_mm": null,
@@ -324,289 +260,267 @@
     },
     {
       "action": "remove tiny trapped detail",
-      "area_mm2": 1.0631909179687502,
+      "area_mm2": 4.075565185546876,
       "from_xy_mm": null,
-      "region": "flag and palms",
+      "region": "rope border",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 4.0534153747558594,
+      "from_xy_mm": null,
+      "region": "rope border",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 2.303580322265625,
+      "from_xy_mm": null,
+      "region": "rope border",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 1.9934829711914064,
+      "from_xy_mm": null,
+      "region": "rope border",
+      "support_length_mm": null,
+      "to_xy_mm": null
+    },
+    {
+      "action": "remove tiny trapped detail",
+      "area_mm2": 1.6169361877441408,
+      "from_xy_mm": null,
+      "region": "rope border",
       "support_length_mm": null,
       "to_xy_mm": null
     },
     {
       "action": "add support",
-      "area_mm2": 22.725705871582033,
+      "area_mm2": 41.065749206542975,
       "from_xy_mm": [
-        200.471484375,
-        171.003515625
+        33.63515625,
+        221.605078125
       ],
-      "region": "quote and dividers",
+      "region": "rope border",
+      "support_length_mm": 0.7588775135464262,
+      "to_xy_mm": [
+        32.891015625,
+        221.75390625
+      ]
+    },
+    {
+      "action": "add support",
+      "area_mm2": 10.698358612060547,
+      "from_xy_mm": [
+        40.034765625,
+        222.05156250000002
+      ],
+      "region": "rope border",
+      "support_length_mm": 0.8678096374750233,
+      "to_xy_mm": [
+        40.77890625,
+        221.605078125
+      ]
+    },
+    {
+      "action": "add support",
+      "area_mm2": 954.2802983093262,
+      "from_xy_mm": [
+        52.238671875,
+        88.40390625
+      ],
+      "region": "mountains and forest",
       "support_length_mm": 1.339453125,
       "to_xy_mm": [
-        200.471484375,
-        169.6640625
+        52.238671875,
+        87.064453125
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 16.590208282470705,
+      "area_mm2": 9.72376693725586,
       "from_xy_mm": [
-        209.103515625,
-        223.8375
+        207.46640625,
+        219.96796875
       ],
       "region": "sailboat and waves",
-      "support_length_mm": 1.473323269862908,
+      "support_length_mm": 1.6639490223191795,
       "to_xy_mm": [
-        210.14531250000002,
-        224.879296875
+        208.210546875,
+        221.45625
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 13.312036285400392,
+      "area_mm2": 32.22797470092774,
       "from_xy_mm": [
-        192.58359375,
-        223.2421875
+        204.341015625,
+        218.77734375
+      ],
+      "region": "skyline and animals",
+      "support_length_mm": 1.637109375,
+      "to_xy_mm": [
+        205.978125,
+        218.77734375
+      ]
+    },
+    {
+      "action": "add support",
+      "area_mm2": 13.666433258056642,
+      "from_xy_mm": [
+        198.387890625,
+        220.414453125
       ],
       "region": "skyline and animals",
       "support_length_mm": 1.532279329576581,
       "to_xy_mm": [
-        191.839453125,
-        224.581640625
+        199.72734375,
+        221.15859375
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 34.39865615844727,
+      "area_mm2": 9.103572235107423,
       "from_xy_mm": [
-        197.94140625,
-        222.94453125
+        201.662109375,
+        68.75859375
       ],
-      "region": "skyline and animals",
-      "support_length_mm": 1.6438603701360728,
+      "region": "airplane and route",
+      "support_length_mm": 2.232421875,
       "to_xy_mm": [
-        196.304296875,
-        223.093359375
+        201.662109375,
+        66.526171875
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 108.97706909179688,
+      "area_mm2": 21.950462493896488,
       "from_xy_mm": [
-        54.917578125,
-        118.76484375
-      ],
-      "region": "globe and hiker",
-      "support_length_mm": 2.56917177621946,
-      "to_xy_mm": [
-        55.3640625,
-        116.23476562500001
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 164.88319152832034,
-      "from_xy_mm": [
-        39.290625,
-        119.36015625
-      ],
-      "region": "globe and hiker",
-      "support_length_mm": 2.599171462458713,
-      "to_xy_mm": [
-        38.248828125,
-        116.97890625000001
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 149.9320692443848,
-      "from_xy_mm": [
-        61.3171875,
-        90.18984375
-      ],
-      "region": "mountains and forest",
-      "support_length_mm": 2.8238151293534828,
-      "to_xy_mm": [
-        58.63828125,
-        91.0828125
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 207.69877578735353,
-      "from_xy_mm": [
-        120.55078125,
-        87.80859375
+        118.318359375,
+        50.155078125
       ],
       "region": "captain portrait",
-      "support_length_mm": 3.0135398494654764,
+      "support_length_mm": 2.32476963009409,
       "to_xy_mm": [
-        123.378515625,
-        86.766796875
+        116.830078125,
+        48.369140625
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 218.53003326416018,
+      "area_mm2": 13.112687988281252,
       "from_xy_mm": [
-        105.66796875,
-        99.11953125
+        203.89453125,
+        79.623046875
       ],
-      "region": "mountains and forest",
-      "support_length_mm": 3.0355100541857047,
+      "region": "airplane and route",
+      "support_length_mm": 2.4635438207465037,
       "to_xy_mm": [
-        108.64453125,
-        98.52421875
+        204.93632812500002,
+        81.85546875
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 212.57173416137698,
+      "area_mm2": 20.798672332763672,
       "from_xy_mm": [
-        75.009375,
-        93.4640625
+        236.3390625,
+        70.693359375
       ],
-      "region": "mountains and forest",
-      "support_length_mm": 3.064558659153162,
+      "region": "airplane and route",
+      "support_length_mm": 2.736171786888258,
       "to_xy_mm": [
-        72.33046875,
-        94.95234375
+        238.273828125,
+        68.75859375
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 15.770665283203126,
+      "area_mm2": 36.36998931884766,
       "from_xy_mm": [
-        208.508203125,
-        84.683203125
-      ],
-      "region": "nautical symbols",
-      "support_length_mm": 3.4520426135212188,
-      "to_xy_mm": [
-        208.9546875,
-        88.10625
-      ]
-    },
-    {
-      "action": "add support",
-      "area_mm2": 26.446874084472658,
-      "from_xy_mm": [
-        248.09648437500002,
-        76.49765625
+        204.638671875,
+        106.709765625
       ],
       "region": "nautical symbols",
-      "support_length_mm": 3.6757835331422237,
+      "support_length_mm": 3.2944509842457297,
       "to_xy_mm": [
-        249.4359375,
-        73.074609375
+        205.68046875000002,
+        109.83515625
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 52.93804779052735,
+      "area_mm2": 36.21494064331055,
       "from_xy_mm": [
-        210.294140625,
-        96.440625
+        205.233984375,
+        98.077734375
       ],
       "region": "nautical symbols",
-      "support_length_mm": 4.2357226940302235,
+      "support_length_mm": 1.934765625,
       "to_xy_mm": [
-        211.63359375000002,
-        92.422265625
+        205.233984375,
+        100.0125
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 54.067688140869144,
+      "area_mm2": 36.76868591308594,
       "from_xy_mm": [
-        206.126953125,
-        96.73828125
+        200.173828125,
+        90.933984375
       ],
       "region": "nautical symbols",
-      "support_length_mm": 2.530078125,
+      "support_length_mm": 2.232421875,
       "to_xy_mm": [
-        208.65703125000002,
-        96.73828125
+        202.40625,
+        90.933984375
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 56.79211486816407,
+      "area_mm2": 36.436438751220706,
       "from_xy_mm": [
-        197.64375,
-        107.45390625
+        193.17890625,
+        100.0125
       ],
       "region": "nautical symbols",
-      "support_length_mm": 2.530078125,
+      "support_length_mm": 1.934765625,
       "to_xy_mm": [
-        197.64375,
-        104.923828125
+        193.17890625,
+        98.077734375
       ]
     },
     {
       "action": "add support",
-      "area_mm2": 55.37452697753907,
+      "area_mm2": 34.19930786132813,
       "from_xy_mm": [
-        212.22890625,
-        107.45390625
+        66.37734375,
+        221.15859375
       ],
-      "region": "nautical symbols",
-      "support_length_mm": 2.530078125,
+      "region": "desert and landmarks",
+      "support_length_mm": 5.578573667289602,
       "to_xy_mm": [
-        212.22890625,
-        104.923828125
+        62.358984375,
+        217.2890625
       ]
     }
   ],
-  "legacy_border_pixels_removed": 181566,
-  "longest_support_mm": 4.2357,
+  "legacy_border_pixels_removed": 166832,
+  "longest_support_mm": 5.5786,
   "material_components": 1,
-  "material_pixels": 2006883,
+  "material_pixels": 2264546,
   "nominal_diameter_in": 12.0,
   "nominal_diameter_mm": 304.8,
   "object_assessment": [
     {
       "as_supplied": "fails: floating material or undersized cuts",
       "final_status": "works after automatic changes",
-      "longest_support_mm": 0.0,
+      "longest_support_mm": 2.736,
       "object": "airplane and route",
-      "resolution": "retained with stencil supports and/or detail cleanup",
-      "support_count": 0,
-      "tiny_material_details_removed": 1,
-      "undersized_cut_details_removed": 0
-    },
-    {
-      "as_supplied": "fails: floating material or undersized cuts",
-      "final_status": "works after automatic changes",
-      "longest_support_mm": 3.014,
-      "object": "captain portrait",
-      "resolution": "retained with stencil supports and/or detail cleanup",
-      "support_count": 1,
-      "tiny_material_details_removed": 0,
-      "undersized_cut_details_removed": 0
-    },
-    {
-      "as_supplied": "fails: floating material or undersized cuts",
-      "final_status": "works after automatic changes",
-      "longest_support_mm": 0.0,
-      "object": "flag and palms",
-      "resolution": "retained with stencil supports and/or detail cleanup",
-      "support_count": 0,
-      "tiny_material_details_removed": 1,
-      "undersized_cut_details_removed": 0
-    },
-    {
-      "as_supplied": "fails: floating material or undersized cuts",
-      "final_status": "works after automatic changes",
-      "longest_support_mm": 2.599,
-      "object": "globe and hiker",
-      "resolution": "retained with stencil supports and/or detail cleanup",
-      "support_count": 2,
-      "tiny_material_details_removed": 2,
-      "undersized_cut_details_removed": 0
-    },
-    {
-      "as_supplied": "fails: floating material or undersized cuts",
-      "final_status": "works after automatic changes",
-      "longest_support_mm": 3.065,
-      "object": "mountains and forest",
       "resolution": "retained with stencil supports and/or detail cleanup",
       "support_count": 3,
       "tiny_material_details_removed": 0,
@@ -615,28 +529,78 @@
     {
       "as_supplied": "fails: floating material or undersized cuts",
       "final_status": "works after automatic changes",
-      "longest_support_mm": 4.236,
-      "object": "nautical symbols",
+      "longest_support_mm": 2.325,
+      "object": "captain portrait",
       "resolution": "retained with stencil supports and/or detail cleanup",
-      "support_count": 6,
-      "tiny_material_details_removed": 2,
+      "support_count": 1,
+      "tiny_material_details_removed": 1,
       "undersized_cut_details_removed": 0
     },
     {
       "as_supplied": "fails: floating material or undersized cuts",
       "final_status": "works after automatic changes",
-      "longest_support_mm": 1.339,
-      "object": "quote and dividers",
+      "longest_support_mm": 5.579,
+      "object": "desert and landmarks",
       "resolution": "retained with stencil supports and/or detail cleanup",
       "support_count": 1,
-      "tiny_material_details_removed": 26,
+      "tiny_material_details_removed": 8,
       "undersized_cut_details_removed": 0
     },
     {
       "as_supplied": "fails: floating material or undersized cuts",
       "final_status": "works after automatic changes",
       "longest_support_mm": 0.0,
+      "object": "globe and hiker",
+      "resolution": "retained with stencil supports and/or detail cleanup",
+      "support_count": 0,
+      "tiny_material_details_removed": 4,
+      "undersized_cut_details_removed": 0
+    },
+    {
+      "as_supplied": "fails: floating material or undersized cuts",
+      "final_status": "works after automatic changes",
+      "longest_support_mm": 1.339,
+      "object": "mountains and forest",
+      "resolution": "retained with stencil supports and/or detail cleanup",
+      "support_count": 1,
+      "tiny_material_details_removed": 1,
+      "undersized_cut_details_removed": 2
+    },
+    {
+      "as_supplied": "fails: floating material or undersized cuts",
+      "final_status": "works after automatic changes",
+      "longest_support_mm": 3.294,
+      "object": "nautical symbols",
+      "resolution": "retained with stencil supports and/or detail cleanup",
+      "support_count": 4,
+      "tiny_material_details_removed": 0,
+      "undersized_cut_details_removed": 4
+    },
+    {
+      "as_supplied": "fails: floating material or undersized cuts",
+      "final_status": "works after automatic changes",
+      "longest_support_mm": 0.868,
       "object": "rope border",
+      "resolution": "retained with stencil supports and/or detail cleanup",
+      "support_count": 2,
+      "tiny_material_details_removed": 7,
+      "undersized_cut_details_removed": 13
+    },
+    {
+      "as_supplied": "fails: floating material or undersized cuts",
+      "final_status": "works after automatic changes",
+      "longest_support_mm": 1.664,
+      "object": "sailboat and waves",
+      "resolution": "retained with stencil supports and/or detail cleanup",
+      "support_count": 1,
+      "tiny_material_details_removed": 5,
+      "undersized_cut_details_removed": 0
+    },
+    {
+      "as_supplied": "fails: floating material or undersized cuts",
+      "final_status": "works after automatic changes",
+      "longest_support_mm": 0.0,
+      "object": "scuba and marine",
       "resolution": "retained with stencil supports and/or detail cleanup",
       "support_count": 0,
       "tiny_material_details_removed": 0,
@@ -645,31 +609,11 @@
     {
       "as_supplied": "fails: floating material or undersized cuts",
       "final_status": "works after automatic changes",
-      "longest_support_mm": 1.473,
-      "object": "sailboat and waves",
-      "resolution": "retained with stencil supports and/or detail cleanup",
-      "support_count": 1,
-      "tiny_material_details_removed": 1,
-      "undersized_cut_details_removed": 0
-    },
-    {
-      "as_supplied": "fails: floating material or undersized cuts",
-      "final_status": "works after automatic changes",
-      "longest_support_mm": 1.644,
+      "longest_support_mm": 1.637,
       "object": "skyline and animals",
       "resolution": "retained with stencil supports and/or detail cleanup",
       "support_count": 2,
-      "tiny_material_details_removed": 0,
-      "undersized_cut_details_removed": 0
-    },
-    {
-      "as_supplied": "fails: floating material or undersized cuts",
-      "final_status": "works after automatic changes",
-      "longest_support_mm": 0.0,
-      "object": "tropical island",
-      "resolution": "retained with stencil supports and/or detail cleanup",
-      "support_count": 0,
-      "tiny_material_details_removed": 1,
+      "tiny_material_details_removed": 4,
       "undersized_cut_details_removed": 0
     },
     {
@@ -686,31 +630,145 @@
   "pixels_per_mm": 6.71916,
   "rejected_cut_details": [
     {
-      "area_mm2": 5.714651184082031,
+      "area_mm2": 9.52441864013672,
       "reason": "cut area below minimum for 12 inch plate",
       "region": "rope border",
-      "width_mm": 1.2492334831506013
+      "width_mm": 2.200810716301203
+    },
+    {
+      "area_mm2": 9.834515991210939,
+      "reason": "cut area below minimum for 12 inch plate",
+      "region": "rope border",
+      "width_mm": 2.1412793811410666
+    },
+    {
+      "area_mm2": 9.037122802734375,
+      "reason": "cut area below minimum for 12 inch plate",
+      "region": "rope border",
+      "width_mm": 1.9617629494518043
+    },
+    {
+      "area_mm2": 9.236471099853517,
+      "reason": "cut area below minimum for 12 inch plate",
+      "region": "rope border",
+      "width_mm": 2.08359375
+    },
+    {
+      "area_mm2": 8.926373748779298,
+      "reason": "cut area below minimum for 12 inch plate",
+      "region": "rope border",
+      "width_mm": 1.9040771763771773
+    },
+    {
+      "area_mm2": 9.502268829345704,
+      "reason": "cut area below minimum for 12 inch plate",
+      "region": "rope border",
+      "width_mm": 2.08359375
+    },
+    {
+      "area_mm2": 9.258620910644533,
+      "reason": "cut area below minimum for 12 inch plate",
+      "region": "rope border",
+      "width_mm": 2.08359375
+    },
+    {
+      "area_mm2": 8.837774505615235,
+      "reason": "cut area below minimum for 12 inch plate",
+      "region": "nautical symbols",
+      "width_mm": 1.9040771763771773
+    },
+    {
+      "area_mm2": 1.0410411071777346,
+      "reason": "cut area below minimum for 12 inch plate",
+      "region": "mountains and forest",
+      "width_mm": 1.0706397615373136
+    },
+    {
+      "area_mm2": 8.416928100585938,
+      "reason": "cut area below minimum for 12 inch plate",
+      "region": "nautical symbols",
+      "width_mm": 1.9040771763771773
+    },
+    {
+      "area_mm2": 8.616276397705079,
+      "reason": "cut area below minimum for 12 inch plate",
+      "region": "nautical symbols",
+      "width_mm": 1.9031544663012028
+    },
+    {
+      "area_mm2": 0.26579772949218755,
+      "reason": "cut area below minimum for 12 inch plate",
+      "region": "mountains and forest",
+      "width_mm": 0.416718742903322
+    },
+    {
+      "area_mm2": 5.47100326538086,
+      "reason": "cut area below minimum for 12 inch plate",
+      "region": "rope border",
+      "width_mm": 2.500312386453152
+    },
+    {
+      "area_mm2": 2.2814305114746096,
+      "reason": "cut area below minimum for 12 inch plate",
+      "region": "nautical symbols",
+      "width_mm": 1.48828125
+    },
+    {
+      "area_mm2": 3.1231233215332033,
+      "reason": "cut area below minimum for 12 inch plate",
+      "region": "rope border",
+      "width_mm": 1.8445459831506015
+    },
+    {
+      "area_mm2": 2.4586289978027347,
+      "reason": "cut area below minimum for 12 inch plate",
+      "region": "rope border",
+      "width_mm": 1.666874971613288
+    },
+    {
+      "area_mm2": 2.8351757812500002,
+      "reason": "cut area below minimum for 12 inch plate",
+      "region": "rope border",
+      "width_mm": 1.666874971613288
+    },
+    {
+      "area_mm2": 9.834515991210939,
+      "reason": "cut area below minimum for 12 inch plate",
+      "region": "scuba and marine",
+      "width_mm": 2.38125
+    },
+    {
+      "area_mm2": 7.553085479736329,
+      "reason": "cut area below minimum for 12 inch plate",
+      "region": "rope border",
+      "width_mm": 1.8445459831506015
+    },
+    {
+      "area_mm2": 6.644943237304688,
+      "reason": "cut area below minimum for 12 inch plate",
+      "region": "rope border",
+      "width_mm": 1.0706397615373136
     }
   ],
   "settings": {
     "diameter_mm": 304.8,
-    "minimum_cut_area_mm2": 14.0,
-    "minimum_cut_width_mm": 2.0,
-    "minimum_island_area_mm2": 12.0,
+    "minimum_cut_area_mm2": 10.0,
+    "minimum_cut_width_mm": 1.6,
+    "minimum_island_area_mm2": 6.0,
     "review_support_length_mm": 8.0,
-    "silhouette_close_mm": 1.0,
-    "silhouette_open_mm": 0.7,
-    "simplify_mm": 0.7,
+    "silhouette_close_mm": 0.65,
+    "silhouette_open_mm": 0.5,
+    "simplify_mm": 0.4,
     "solid_rim_mm": 10.0,
-    "support_width_mm": 2.8,
-    "threshold": 160,
+    "support_width_mm": 2.5,
+    "threshold": 155,
     "working_pixels": 2048
   },
   "solid_rim_mm": 10.0,
   "source": "fabrication/waterjet/waterjet-source-12in.png",
   "source_pixels": 2048,
-  "support_count": 16,
-  "support_width_mm": 2.8,
-  "tiny_material_details_removed": 35,
-  "undersized_cut_details_removed": 1
+  "support_count": 15,
+  "support_width_mm": 2.5,
+  "tiny_material_details_removed": 31,
+  "undersized_cut_details_removed": 20
 }

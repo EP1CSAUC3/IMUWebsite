@@ -21,12 +21,12 @@ Suggested order: `01` → `02` → `03` → `04` → `05` → `06` → `00`.
 | Part | Inner cuts | Outer profile | Contents |
 |---|---:|---|---|
 | `00-outer-profile` | 0 | yes | Outside plate profile only. Cut this last. |
-| `01-rope-border` | 39 | no | Braided rope border cutouts. |
-| `02-quote-and-dividers` | 34 | no | Central quote lettering and divider cuts. |
-| `03-top-captain-mountains` | 2 | no | Captain portrait plus mountains and forest. |
-| `04-right-nautical-plane` | 9 | no | Airplane, nautical symbols, and tropical island. |
-| `05-left-globe-hiker` | 6 | no | Globe, hiker, flag, and left palms. |
-| `06-bottom-scene` | 7 | no | Skyline, animals, yacht, sailboat, and lower waves. |
+| `01-rope-border` | 49 | no | Braided rope border cutouts. |
+| `02-quote-and-dividers` | 89 | no | Central quote lettering and divider cuts. |
+| `03-top-captain-mountains` | 9 | no | Captain portrait plus mountains and forest. |
+| `04-right-nautical-plane` | 10 | no | Airplane, nautical symbols, and tropical island. |
+| `05-left-globe-hiker` | 2 | no | Globe, hiker, flag, and left palms. |
+| `06-bottom-scene` | 13 | no | Skyline, animals, yacht, sailboat, and lower waves. |
 
 Full combined geometry remains in `../waterjet-ready.dxf` and
 `../waterjet-ready.svg` if you want one file later.

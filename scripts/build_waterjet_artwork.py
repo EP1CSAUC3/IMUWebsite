@@ -149,19 +149,25 @@ def region_for_point(x: float, y: float, width: int, height: int) -> str:
     radial = math.hypot(nx - 0.5, ny - 0.5)
     if radial > 0.405:
         return "rope border"
+    if 0.34 <= ny <= 0.70 and 0.27 <= nx <= 0.74:
+        return "quote and dividers"
     if ny < 0.39 and nx < 0.34:
         return "mountains and forest"
     if ny < 0.40 and nx < 0.61:
         return "captain portrait"
-    if ny < 0.25 and nx >= 0.58:
+    if ny < 0.28 and nx >= 0.58:
         return "airplane and route"
-    if ny < 0.43 and nx >= 0.57:
+    if ny < 0.48 and nx >= 0.57:
         return "nautical symbols"
+    if 0.45 <= ny < 0.68 and nx >= 0.62:
+        return "scuba and marine"
     if 0.34 <= ny < 0.66 and nx < 0.31:
         return "globe and hiker"
-    if 0.36 <= ny < 0.68 and nx < 0.73:
-        return "quote and dividers"
-    if 0.38 <= ny < 0.65:
+    if 0.55 <= ny < 0.78 and nx < 0.38:
+        return "desert and landmarks"
+    if 0.55 <= ny < 0.78 and 0.30 <= nx < 0.48:
+        return "golf and recreation"
+    if 0.38 <= ny < 0.65 and nx >= 0.55:
         return "tropical island"
     if ny >= 0.77 and 0.31 <= nx < 0.72:
         return "yacht and lower waves"
@@ -172,6 +178,16 @@ def region_for_point(x: float, y: float, width: int, height: int) -> str:
     if ny >= 0.60:
         return "sailboat and waves"
     return "uncategorized artwork"
+
+
+def quote_band_mask(shape: tuple[int, int]) -> np.ndarray:
+    """Central text band where open letter cuts must be preserved."""
+    height, width = shape
+    y0, y1 = int(height * 0.34), int(height * 0.70)
+    x0, x1 = int(width * 0.27), int(width * 0.74)
+    mask = np.zeros(shape, dtype=bool)
+    mask[y0:y1, x0:x1] = True
+    return mask
 
 
 def component_boundaries(mask: np.ndarray) -> np.ndarray:
@@ -189,24 +205,37 @@ def simplify_silhouettes(
 
     Opening removes hairline cut detail that the eye cannot resolve at 12".
     Closing merges nearby fragments into one solid cut the brain can register.
+    The quote band uses a milder pass so open letterforms (especially E arm
+    slots and stencil counters) stay cuttable and readable.
     """
-    opened = black.astype(np.uint8)
-    open_px = settings.silhouette_open_mm * px_per_mm
-    if open_px >= 1.0:
-        kernel = cv2.getStructuringElement(
-            cv2.MORPH_ELLIPSE, (odd_kernel(open_px), odd_kernel(open_px))
-        )
-        opened = cv2.morphologyEx(opened, cv2.MORPH_OPEN, kernel)
+    source = black.astype(np.uint8)
+    quote = quote_band_mask(black.shape)
 
-    closed = opened
-    close_px = settings.silhouette_close_mm * px_per_mm
-    if close_px >= 1.0:
-        kernel = cv2.getStructuringElement(
-            cv2.MORPH_ELLIPSE, (odd_kernel(close_px), odd_kernel(close_px))
-        )
-        closed = cv2.morphologyEx(closed, cv2.MORPH_CLOSE, kernel)
+    def morph(image: np.ndarray, open_mm: float, close_mm: float) -> np.ndarray:
+        result = image
+        open_px = open_mm * px_per_mm
+        if open_px >= 1.0:
+            kernel = cv2.getStructuringElement(
+                cv2.MORPH_ELLIPSE, (odd_kernel(open_px), odd_kernel(open_px))
+            )
+            result = cv2.morphologyEx(result, cv2.MORPH_OPEN, kernel)
+        close_px = close_mm * px_per_mm
+        if close_px >= 1.0:
+            kernel = cv2.getStructuringElement(
+                cv2.MORPH_ELLIPSE, (odd_kernel(close_px), odd_kernel(close_px))
+            )
+            result = cv2.morphologyEx(result, cv2.MORPH_CLOSE, kernel)
+        return result
 
-    return (closed.astype(bool) & disc)
+    icons = morph(source, settings.silhouette_open_mm, settings.silhouette_close_mm)
+    letters = morph(
+        source,
+        max(0.25, settings.silhouette_open_mm * 0.35),
+        max(0.25, settings.silhouette_close_mm * 0.35),
+    )
+    combined = icons.copy()
+    combined[quote] = letters[quote]
+    return (combined.astype(bool) & disc)
 
 
 def reject_unmanufacturable_cuts(
@@ -220,20 +249,26 @@ def reject_unmanufacturable_cuts(
     distance = cv2.distanceTransform(black.astype(np.uint8), cv2.DIST_L2, 5)
     result = black.copy()
     rejected: list[FeatureChange] = []
-    minimum_area_px = settings.minimum_cut_area_mm2 * px_per_mm**2
-    minimum_width_px = settings.minimum_cut_width_mm * px_per_mm
+    quote = quote_band_mask(black.shape)
+    # Keep open letter slots (especially E arm gaps) even when they are
+    # narrower than icon-cut minima, as long as they remain cuttable.
+    quote_area_mm2 = max(4.0, settings.minimum_cut_area_mm2 * 0.45)
+    quote_width_mm = max(1.0, settings.minimum_cut_width_mm * 0.65)
 
     for component in range(1, count):
         area_px = int(stats[component, cv2.CC_STAT_AREA])
         width_px = float(2.0 * np.max(distance[labels == component]))
+        x, y = centroids[component]
+        in_quote = bool(quote[int(round(y)) % black.shape[0], int(round(x)) % black.shape[1]])
+        min_area = quote_area_mm2 if in_quote else settings.minimum_cut_area_mm2
+        min_width = quote_width_mm if in_quote else settings.minimum_cut_width_mm
         reason = ""
-        if area_px < minimum_area_px:
+        if area_px < min_area * px_per_mm**2:
             reason = "cut area below minimum for 12 inch plate"
-        elif width_px < minimum_width_px:
+        elif width_px < min_width * px_per_mm:
             reason = "cut width below minimum for 12 inch plate"
         if not reason:
             continue
-        x, y = centroids[component]
         rejected.append(
             FeatureChange(
                 region_for_point(x, y, black.shape[1], black.shape[0]),
