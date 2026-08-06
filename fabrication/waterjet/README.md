@@ -1,51 +1,35 @@
 # Waterjet medallion
 
-`waterjet-ready.dxf` is the primary fabrication file. It is an ASCII
-AutoCAD R12 DXF drawn at a nominal **500 mm outside diameter**.
-`waterjet-ready.svg` contains the same closed geometry for Fusion 360.
+This directory is a clean rebuild of the supplied artwork using the convention
+**white = retained plate** and **black = through-cut**.
 
-## Files
+## Review files
 
-- `waterjet-ready.dxf` — closed CAD polylines in millimetres.
-- `waterjet-ready.svg` — closed Fusion-compatible paths in millimetres.
-- `waterjet-ready-preview.png` — white material / black through-cut preview;
-  pixels outside the plate are transparent.
-- `waterjet-validation.json` — connectivity and export results.
-- `waterjet-source-reference.png` — cleaned artwork reference used to build
-  the cut files.
+- `waterjet-source-reference.png` — source artwork retained for repeatability.
+- `waterjet-border-cleaned.png` — first pass with the old outside black border
+  removed and a 15 mm solid rim around the rope.
+- `waterjet-support-plan.png` — manufacturability markup. Orange is added plate
+  support; purple is tiny trapped material converted to cutout.
+- `waterjet-ready-preview.png` — final strict white/black production preview.
+- `ASSESSMENT.md` — object-by-object result and removal recommendations.
+- `waterjet-validation.json` — complete machine-readable measurements.
 
-The DXF and SVG use two named layers/groups:
+## Fabrication files
 
-- `CUT_INNER`: cut these features first.
-- `CUT_OUTER`: cut this profile last so the work remains registered.
+- `waterjet-ready.dxf` — primary AutoCAD R12 geometry at 500 mm diameter.
+- `waterjet-ready.svg` — equivalent closed geometry for Fusion 360.
 
-## Fabrication assumptions
+Both vector files separate `CUT_INNER` from `CUT_OUTER`. Cut all inner features
+first and the outside profile last. Kerf compensation, lead-ins, and pierce
+strategy are intentionally left for CAM.
 
-- Nominal plate diameter: 500 mm.
-- Nominal bridge/web width added to trapped material: 3 mm.
-- Clear solid rim outside the rope artwork: 15 mm.
-- Tiny cut regions under 1.5 mm² were removed.
-- Tiny trapped material islands under 3 mm² were converted to cutout.
-- All retained white material is one connected component.
-
-Kerf compensation is intentionally not baked into the geometry. Apply the
-machine shop's lead-ins, pierce strategy, and kerf offset in CAM for the actual
-material, thickness, abrasive, nozzle, and finish requirement.
-
-If the design is scaled down, its 3 mm bridges scale down too. Do not cut a
-smaller version without checking the resulting web width against the shop's
-minimum. Review the preview at full size and have the waterjet operator run a
-toolpath/simulation check before cutting stock.
-
-## Source note
-
-The image attached to the request was visible to the build process but its
-original file bytes were not exposed in the cloud workspace. The included
-source reference is therefore a clean, manufacturing-oriented reconstruction
-of that composition rather than a pixel-for-pixel trace. Replace the reference
-input and rerun the builder if exact source fidelity is required:
+## Rebuild
 
 ```sh
-python3 scripts/build_waterjet_artwork.py path/to/source.png \
+python3 scripts/build_waterjet_artwork.py \
+  fabrication/waterjet/waterjet-source-reference.png \
   --output-dir fabrication/waterjet
 ```
+
+The build fails if retained white material is disconnected or if raster cut
+components do not match exported closed contours.
