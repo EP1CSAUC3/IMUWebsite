@@ -1,18 +1,19 @@
 {
   "bridge_width_mm": 3.0,
   "bridge_width_pixels": 6,
-  "closed_inner_contours": 287,
-  "cut_components": 292,
-  "cut_pixels": 245444,
+  "closed_inner_contours": 284,
+  "cut_components": 284,
+  "cut_pixels": 245365,
   "dxf": "fabrication/waterjet/waterjet-ready.dxf",
   "material_components": 1,
-  "material_islands_bridged": 87,
-  "material_pixels": 568516,
+  "material_islands_bridged": 89,
+  "material_pixels": 568595,
   "nominal_diameter_mm": 500.0,
   "perimeter_clearance_mm": 15.0,
+  "post_bridge_cutouts_removed": 0,
   "preview": "fabrication/waterjet/waterjet-ready-preview.png",
-  "small_cutouts_removed": 16,
+  "small_cutouts_removed": 24,
   "source_pixels": 1024,
   "svg": "fabrication/waterjet/waterjet-ready.svg",
-  "tiny_material_islands_filled": 4
+  "tiny_material_islands_filled": 16
 }

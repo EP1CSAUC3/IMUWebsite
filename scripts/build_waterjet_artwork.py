@@ -63,7 +63,26 @@ def remove_small_black_components(
     cleaned = black.copy()
     removed = 0
     for component in range(1, count):
-        if stats[component, cv2.CC_STAT_AREA] < minimum_area_px:
+        x = stats[component, cv2.CC_STAT_LEFT]
+        y = stats[component, cv2.CC_STAT_TOP]
+        width = stats[component, cv2.CC_STAT_WIDTH]
+        height = stats[component, cv2.CC_STAT_HEIGHT]
+        component_crop = (labels[y : y + height, x : x + width] == component).astype(
+            np.uint8
+        )
+        contours, _ = cv2.findContours(
+            component_crop,
+            cv2.RETR_EXTERNAL,
+            cv2.CHAIN_APPROX_SIMPLE,
+        )
+        geometric_area = max(
+            (abs(cv2.contourArea(contour)) for contour in contours),
+            default=0.0,
+        )
+        if (
+            stats[component, cv2.CC_STAT_AREA] < minimum_area_px
+            or geometric_area < minimum_area_px
+        ):
             cleaned[labels == component] = False
             removed += 1
     return cleaned, removed
@@ -93,7 +112,7 @@ def bridge_material_islands(
     while True:
         material = disc & ~black
         count, labels, stats, _ = cv2.connectedComponentsWithStats(
-            material.astype(np.uint8), connectivity=8
+            material.astype(np.uint8), connectivity=4
         )
         if count <= 2:
             break
@@ -197,7 +216,6 @@ def write_cutline_svg(
     diameter_mm: float,
     outer_mm: np.ndarray,
     inner_mm: list[np.ndarray],
-    source_name: str,
 ) -> None:
     inner_paths = "\n".join(
         f'    <path d="{escape(svg_path(points))}"/>' for points in inner_mm
@@ -206,7 +224,7 @@ def write_cutline_svg(
 <svg xmlns="http://www.w3.org/2000/svg"
      width="{diameter_mm:.4f}mm" height="{diameter_mm:.4f}mm"
      viewBox="0 0 {diameter_mm:.4f} {diameter_mm:.4f}">
-  <title>Waterjet cut geometry — {escape(source_name)}</title>
+  <title>Waterjet medallion cut geometry</title>
   <desc>Nominal {diameter_mm:g} mm plate. Closed paths only; units are millimetres.</desc>
   <g id="CUT_OUTER" fill="none" stroke="#ff0000" stroke-width="0.1">
     <path d="{escape(svg_path(outer_mm))}"/>
@@ -285,7 +303,7 @@ def validate(
 ) -> dict[str, int | float]:
     material = disc & ~black
     material_count, _, material_stats, _ = cv2.connectedComponentsWithStats(
-        material.astype(np.uint8), connectivity=8
+        material.astype(np.uint8), connectivity=4
     )
     cut_count, _, cut_stats, _ = cv2.connectedComponentsWithStats(
         black.astype(np.uint8), connectivity=8
@@ -298,6 +316,10 @@ def validate(
         raise RuntimeError("No interior cut contours were generated")
     if any(len(contour) < 3 for contour in contours):
         raise RuntimeError("An exported contour is not a closed polygon")
+    if cut_count - 1 != len(contours):
+        raise RuntimeError(
+            f"Raster has {cut_count - 1} cuts but exports {len(contours)} contours"
+        )
 
     return {
         "material_components": material_count - 1,
@@ -344,6 +366,9 @@ def build(source: Path, output_dir: Path, settings: BuildSettings) -> dict[str, 
         disc,
         bridge_width_px,
         minimum_island_area_px,
+    )
+    black, post_bridge_removed_cutouts = remove_small_black_components(
+        black, minimum_cut_area_px
     )
 
     simplify_px = max(0.25, settings.simplify_mm * px_per_mm)
@@ -393,7 +418,6 @@ def build(source: Path, output_dir: Path, settings: BuildSettings) -> dict[str, 
         settings.diameter_mm,
         outer_svg_mm,
         inner_svg_mm,
-        source.name,
     )
     write_r12_dxf(
         dxf_path_out,
@@ -411,6 +435,7 @@ def build(source: Path, output_dir: Path, settings: BuildSettings) -> dict[str, 
             "bridge_width_pixels": bridge_width_px,
             "perimeter_clearance_mm": settings.perimeter_clearance_mm,
             "small_cutouts_removed": removed_cutouts,
+            "post_bridge_cutouts_removed": post_bridge_removed_cutouts,
             "material_islands_bridged": bridges,
             "tiny_material_islands_filled": filled_islands,
             "svg": str(svg_path_out),
