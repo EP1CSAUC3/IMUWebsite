@@ -1,4 +1,50 @@
 {
+  "aligned_part_count": 7,
+  "aligned_parts": [
+    {
+      "dxf": "fabrication/waterjet/parts/waterjet-part-00-outer-profile.dxf",
+      "inner_cut_count": 0,
+      "part": "00-outer-profile",
+      "svg": "fabrication/waterjet/parts/waterjet-part-00-outer-profile.svg"
+    },
+    {
+      "dxf": "fabrication/waterjet/parts/waterjet-part-01-rope-border.dxf",
+      "inner_cut_count": 39,
+      "part": "01-rope-border",
+      "svg": "fabrication/waterjet/parts/waterjet-part-01-rope-border.svg"
+    },
+    {
+      "dxf": "fabrication/waterjet/parts/waterjet-part-02-quote-and-dividers.dxf",
+      "inner_cut_count": 34,
+      "part": "02-quote-and-dividers",
+      "svg": "fabrication/waterjet/parts/waterjet-part-02-quote-and-dividers.svg"
+    },
+    {
+      "dxf": "fabrication/waterjet/parts/waterjet-part-03-top-captain-mountains.dxf",
+      "inner_cut_count": 2,
+      "part": "03-top-captain-mountains",
+      "svg": "fabrication/waterjet/parts/waterjet-part-03-top-captain-mountains.svg"
+    },
+    {
+      "dxf": "fabrication/waterjet/parts/waterjet-part-04-right-nautical-plane.dxf",
+      "inner_cut_count": 9,
+      "part": "04-right-nautical-plane",
+      "svg": "fabrication/waterjet/parts/waterjet-part-04-right-nautical-plane.svg"
+    },
+    {
+      "dxf": "fabrication/waterjet/parts/waterjet-part-05-left-globe-hiker.dxf",
+      "inner_cut_count": 6,
+      "part": "05-left-globe-hiker",
+      "svg": "fabrication/waterjet/parts/waterjet-part-05-left-globe-hiker.svg"
+    },
+    {
+      "dxf": "fabrication/waterjet/parts/waterjet-part-06-bottom-scene.dxf",
+      "inner_cut_count": 7,
+      "part": "06-bottom-scene",
+      "svg": "fabrication/waterjet/parts/waterjet-part-06-bottom-scene.svg"
+    }
+  ],
+  "aligned_parts_dir": "fabrication/waterjet/parts",
   "closed_inner_contours": 97,
   "cut_components": 97,
   "cut_pixels": 1268021,

@@ -27,6 +27,59 @@ from scipy.spatial import cKDTree
 INCH_MM = 25.4
 DEFAULT_DIAMETER_MM = 12.0 * INCH_MM  # 304.8 mm
 
+# Shared-origin Fusion packs. Every part uses the same canvas so imports align.
+PART_DEFINITIONS: tuple[tuple[str, str, frozenset[str], bool], ...] = (
+    (
+        "00-outer-profile",
+        "Outside plate profile only. Cut this last.",
+        frozenset(),
+        True,
+    ),
+    (
+        "01-rope-border",
+        "Braided rope border cutouts.",
+        frozenset({"rope border"}),
+        False,
+    ),
+    (
+        "02-quote-and-dividers",
+        "Central quote lettering and divider cuts.",
+        frozenset({"quote and dividers"}),
+        False,
+    ),
+    (
+        "03-top-captain-mountains",
+        "Captain portrait plus mountains and forest.",
+        frozenset({"captain portrait", "mountains and forest"}),
+        False,
+    ),
+    (
+        "04-right-nautical-plane",
+        "Airplane, nautical symbols, and tropical island.",
+        frozenset({"airplane and route", "nautical symbols", "tropical island"}),
+        False,
+    ),
+    (
+        "05-left-globe-hiker",
+        "Globe, hiker, flag, and left palms.",
+        frozenset({"globe and hiker", "flag and palms"}),
+        False,
+    ),
+    (
+        "06-bottom-scene",
+        "Skyline, animals, yacht, sailboat, and lower waves.",
+        frozenset(
+            {
+                "skyline and animals",
+                "yacht and lower waves",
+                "sailboat and waves",
+                "uncategorized artwork",
+            }
+        ),
+        False,
+    ),
+)
+
 
 @dataclass(frozen=True)
 class Settings:
@@ -303,24 +356,48 @@ def path_data(points: np.ndarray) -> str:
 
 
 def write_svg(
-    path: Path, diameter_mm: float, outer: np.ndarray, inner: list[np.ndarray]
+    path: Path,
+    diameter_mm: float,
+    outer: np.ndarray | None,
+    inner: list[np.ndarray],
+    *,
+    title: str,
+    desc: str,
+    include_align: bool = False,
+    align_outer: np.ndarray | None = None,
 ) -> None:
-    inner_paths = "\n".join(
-        f'    <path d="{escape(path_data(points))}"/>' for points in inner
-    )
+    groups: list[str] = []
+    if include_align and align_outer is not None:
+        groups.append(
+            '  <g id="ALIGN" fill="none" stroke="#888888" stroke-width="0.1" '
+            'stroke-dasharray="1 1">\n'
+            f'    <path d="{escape(path_data(align_outer))}"/>\n'
+            "  </g>"
+        )
+    if outer is not None:
+        groups.append(
+            '  <g id="CUT_OUTER" fill="none" stroke="#ff0000" stroke-width="0.1">\n'
+            f'    <path d="{escape(path_data(outer))}"/>\n'
+            "  </g>"
+        )
+    if inner:
+        inner_paths = "\n".join(
+            f'    <path d="{escape(path_data(points))}"/>' for points in inner
+        )
+        groups.append(
+            '  <g id="CUT_INNER" fill="none" stroke="#0000ff" stroke-width="0.1">\n'
+            f"{inner_paths}\n"
+            "  </g>"
+        )
+    body = "\n".join(groups)
     path.write_text(
         f"""<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg"
      width="{diameter_mm:.4f}mm" height="{diameter_mm:.4f}mm"
      viewBox="0 0 {diameter_mm:.4f} {diameter_mm:.4f}">
-  <title>12 inch waterjet medallion</title>
-  <desc>White plate / black cut. Nominal {diameter_mm / INCH_MM:.3f} inch diameter.</desc>
-  <g id="CUT_OUTER" fill="none" stroke="#ff0000" stroke-width="0.1">
-    <path d="{escape(path_data(outer))}"/>
-  </g>
-  <g id="CUT_INNER" fill="none" stroke="#0000ff" stroke-width="0.1">
-{inner_paths}
-  </g>
+  <title>{escape(title)}</title>
+  <desc>{escape(desc)}</desc>
+{body}
 </svg>
 """,
         encoding="utf-8",
@@ -350,7 +427,13 @@ def dxf_polyline(points: np.ndarray, layer: str) -> str:
 
 
 def write_dxf(
-    path: Path, diameter_mm: float, outer: np.ndarray, inner: list[np.ndarray]
+    path: Path,
+    diameter_mm: float,
+    outer: np.ndarray | None,
+    inner: list[np.ndarray],
+    *,
+    include_align: bool = False,
+    align_outer: np.ndarray | None = None,
 ) -> None:
     header = (
         dxf_pair(0, "SECTION")
@@ -363,11 +446,205 @@ def write_dxf(
         + dxf_pair(0, "SECTION")
         + dxf_pair(2, "ENTITIES")
     )
-    entities = dxf_polyline(outer, "CUT_OUTER")
+    entities = ""
+    if include_align and align_outer is not None:
+        entities += dxf_polyline(align_outer, "ALIGN")
+    if outer is not None:
+        entities += dxf_polyline(outer, "CUT_OUTER")
     entities += "".join(dxf_polyline(points, "CUT_INNER") for points in inner)
     path.write_text(
         header + entities + dxf_pair(0, "ENDSEC") + dxf_pair(0, "EOF"),
         encoding="ascii",
+    )
+
+
+def contour_centroid_mm(points: np.ndarray) -> tuple[float, float]:
+    return float(np.mean(points[:, 0])), float(np.mean(points[:, 1]))
+
+
+def part_slug_for_region(region: str) -> str:
+    for slug, _title, regions, _is_outer in PART_DEFINITIONS:
+        if region in regions:
+            return slug
+    return "06-bottom-scene"
+
+
+def write_part_preview(
+    path: Path,
+    black: np.ndarray,
+    disc: np.ndarray,
+    selected_mask: np.ndarray,
+) -> None:
+    image = rgba_preview(black, disc)
+    # Dim unselected cuts so the active part is obvious in Fusion planning.
+    other = black & disc & ~selected_mask
+    image[other] = (190, 190, 190, 255)
+    image[selected_mask & disc] = (0, 90, 255, 255)
+    Image.fromarray(image, mode="RGBA").save(path)
+
+
+def export_aligned_parts(
+    parts_dir: Path,
+    diameter_mm: float,
+    outer_svg: np.ndarray,
+    outer_dxf: np.ndarray,
+    inner_svg: list[np.ndarray],
+    inner_dxf: list[np.ndarray],
+    contours_px: list[np.ndarray],
+    black: np.ndarray,
+    disc: np.ndarray,
+) -> list[dict[str, object]]:
+    """Write multi-part SVG/DXF files that share one absolute origin."""
+    if parts_dir.exists():
+        for stale in parts_dir.glob("*"):
+            if stale.is_file():
+                stale.unlink()
+    parts_dir.mkdir(parents=True, exist_ok=True)
+
+    height, width = black.shape
+    buckets: dict[str, list[int]] = {slug: [] for slug, *_ in PART_DEFINITIONS}
+    for index, contour in enumerate(contours_px):
+        centroid = contour.mean(axis=0)
+        region = region_for_point(float(centroid[0]), float(centroid[1]), width, height)
+        buckets[part_slug_for_region(region)].append(index)
+
+    manifest: list[dict[str, object]] = []
+    inches = diameter_mm / INCH_MM
+    for slug, summary, _regions, is_outer in PART_DEFINITIONS:
+        indices = buckets[slug]
+        svg_inner = [inner_svg[i] for i in indices]
+        dxf_inner = [inner_dxf[i] for i in indices]
+        selected = np.zeros(black.shape, dtype=np.uint8)
+        for index in indices:
+            cv2.drawContours(
+                selected,
+                [np.round(contours_px[index]).astype(np.int32)],
+                -1,
+                255,
+                thickness=-1,
+            )
+        selected_mask = selected > 0
+
+        stem = f"waterjet-part-{slug}"
+        svg_path = parts_dir / f"{stem}.svg"
+        dxf_path = parts_dir / f"{stem}.dxf"
+        preview_path = parts_dir / f"{stem}-preview.png"
+        title = f"Waterjet part {slug}"
+        desc = (
+            f"{summary} Shared {inches:g} inch canvas origin for Fusion alignment. "
+            "Import at origin; ignore ALIGN layer for toolpaths."
+        )
+
+        if is_outer:
+            write_svg(
+                svg_path,
+                diameter_mm,
+                outer_svg,
+                [],
+                title=title,
+                desc=desc,
+            )
+            write_dxf(dxf_path, diameter_mm, outer_dxf, [])
+            rim = disc & ~cv2.erode(
+                disc.astype(np.uint8), np.ones((9, 9), np.uint8)
+            ).astype(bool)
+            write_part_preview(preview_path, black, disc, rim)
+            cut_count = 0
+            includes_outer = True
+            includes_align = False
+        else:
+            write_svg(
+                svg_path,
+                diameter_mm,
+                None,
+                svg_inner,
+                title=title,
+                desc=desc,
+                include_align=True,
+                align_outer=outer_svg,
+            )
+            write_dxf(
+                dxf_path,
+                diameter_mm,
+                None,
+                dxf_inner,
+                include_align=True,
+                align_outer=outer_dxf,
+            )
+            write_part_preview(preview_path, black, disc, selected_mask)
+            cut_count = len(indices)
+            includes_outer = False
+            includes_align = True
+
+        centroids = [contour_centroid_mm(inner_svg[i]) for i in indices]
+        manifest.append(
+            {
+                "part": slug,
+                "summary": summary,
+                "svg": str(svg_path),
+                "dxf": str(dxf_path),
+                "preview": str(preview_path),
+                "inner_cut_count": cut_count,
+                "includes_outer_profile": includes_outer,
+                "includes_align_reference": includes_align,
+                "canvas_mm": [diameter_mm, diameter_mm],
+                "origin": [0.0, 0.0],
+                "contour_indices": indices,
+                "centroids_mm": [
+                    {"x": round(x, 3), "y": round(y, 3)} for x, y in centroids
+                ],
+            }
+        )
+
+    assigned = sum(item["inner_cut_count"] for item in manifest)
+    expected = len(inner_svg)
+    if assigned != expected:
+        raise RuntimeError(
+            f"Part split assigned {assigned} cuts but geometry has {expected}"
+        )
+    return manifest
+
+
+def write_parts_guide(
+    path: Path, diameter_mm: float, manifest: list[dict[str, object]]
+) -> None:
+    inches = diameter_mm / INCH_MM
+    rows = []
+    for item in manifest:
+        rows.append(
+            f"| `{item['part']}` | {item['inner_cut_count']} | "
+            f"{'yes' if item['includes_outer_profile'] else 'no'} | "
+            f"{item['summary']} |"
+        )
+    path.write_text(
+        f"""# Fusion multi-part import pack
+
+These files split the 12 inch waterjet geometry so toolpaths can be built in
+smaller pieces on a slow PC. Every file uses the **same absolute origin and the
+same {inches:g} inch / {diameter_mm:g} mm canvas**, so imports stack and align.
+
+## How to import in Fusion 360
+
+1. Create one component for the plate.
+2. Import each `waterjet-part-*.dxf` (preferred) or `.svg` into that component.
+3. Place every import at the **same origin** with no extra move/rotate/scale.
+4. Confirm the grey `ALIGN` circle from each inner part lands on the same rim.
+5. Create toolpaths per part from `CUT_INNER` only.
+6. Import / toolpath `00-outer-profile` **last**. Use only `CUT_OUTER`.
+7. Do **not** cut the `ALIGN` layer. It is a registration reference only.
+
+Suggested order: `01` → `02` → `03` → `04` → `05` → `06` → `00`.
+
+## Parts
+
+| Part | Inner cuts | Outer profile | Contents |
+|---|---:|---|---|
+{chr(10).join(rows)}
+
+Full combined geometry remains in `../waterjet-ready.dxf` and
+`../waterjet-ready.svg` if you want one file later.
+""",
+        encoding="utf-8",
     )
 
 
@@ -626,8 +903,61 @@ def build(source: Path, output_dir: Path, settings: Settings) -> dict[str, objec
         support_mask,
         disc,
     )
-    write_svg(output_dir / "waterjet-ready.svg", settings.diameter_mm, outer_svg, inner_svg)
-    write_dxf(output_dir / "waterjet-ready.dxf", settings.diameter_mm, outer_dxf, inner_dxf)
+    write_svg(
+        output_dir / "waterjet-ready.svg",
+        settings.diameter_mm,
+        outer_svg,
+        inner_svg,
+        title="12 inch waterjet medallion",
+        desc=(
+            f"White plate / black cut. Nominal {settings.diameter_mm / INCH_MM:.3f} "
+            "inch diameter. Combined geometry."
+        ),
+    )
+    write_dxf(
+        output_dir / "waterjet-ready.dxf",
+        settings.diameter_mm,
+        outer_dxf,
+        inner_dxf,
+    )
+
+    parts_dir = output_dir / "parts"
+    part_manifest = export_aligned_parts(
+        parts_dir,
+        settings.diameter_mm,
+        outer_svg,
+        outer_dxf,
+        inner_svg,
+        inner_dxf,
+        contours,
+        black,
+        disc,
+    )
+    write_parts_guide(parts_dir / "README.md", settings.diameter_mm, part_manifest)
+    (parts_dir / "parts-manifest.json").write_text(
+        json.dumps(
+            {
+                "canvas_mm": [settings.diameter_mm, settings.diameter_mm],
+                "origin": [0.0, 0.0],
+                "units": "millimetres",
+                "alignment_rule": (
+                    "Every part shares the same absolute origin and canvas. "
+                    "Import each file at origin with no transform. Cut ALIGN never."
+                ),
+                "recommended_toolpath_order": [
+                    item["part"]
+                    for item in part_manifest
+                    if not item["includes_outer_profile"]
+                ]
+                + ["00-outer-profile"],
+                "parts": part_manifest,
+            },
+            indent=2,
+            sort_keys=True,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
 
     validation = validate(black, disc, contours)
     support_items = [r for r in resolutions if r.action == "add support"]
@@ -651,9 +981,20 @@ def build(source: Path, output_dir: Path, settings: Settings) -> dict[str, objec
         else 0.0,
         "tiny_material_details_removed": len(tiny_items),
         "undersized_cut_details_removed": len(rejected),
+        "aligned_part_count": len(part_manifest),
+        "aligned_parts_dir": str(parts_dir),
         "settings": asdict(settings),
         "island_resolutions": [asdict(item) for item in resolutions],
         "rejected_cut_details": [asdict(item) for item in rejected],
+        "aligned_parts": [
+            {
+                "part": item["part"],
+                "inner_cut_count": item["inner_cut_count"],
+                "dxf": item["dxf"],
+                "svg": item["svg"],
+            }
+            for item in part_manifest
+        ],
     }
     assessment = build_assessment(resolutions, rejected, settings)
     metrics["object_assessment"] = assessment
@@ -709,6 +1050,7 @@ def main() -> None:
         "undersized_cut_details_removed",
         "material_components",
         "cut_components",
+        "aligned_part_count",
     )
     for key in summary_keys:
         print(f"{key}: {metrics[key]}")

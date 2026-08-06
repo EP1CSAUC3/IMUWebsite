@@ -6,6 +6,17 @@ This pack is sized for a **12 inch** (304.8 mm) circular plate that fits a
 12"×12" blank. The artwork is rebuilt as bold silhouettes so the design stays
 readable without relying on hairline illustration detail.
 
+## Fusion multi-part pack (slow PC)
+
+Import the aligned parts in `parts/` instead of the full combined file when
+building toolpaths on a slow machine. Every part shares the same absolute
+origin and canvas, so they stack correctly in Fusion.
+
+- Start here: [`parts/README.md`](parts/README.md)
+- Prefer the `.dxf` files
+- Toolpath order: `01` → `02` → `03` → `04` → `05` → `06` → `00-outer-profile`
+- Never cut the `ALIGN` layer
+
 ## Review images
 
 - `waterjet-source-12in.png` — revised bold source artwork.
@@ -16,10 +27,10 @@ readable without relying on hairline illustration detail.
 - `ASSESSMENT.md` — object-by-object result.
 - `waterjet-validation.json` — machine-readable metrics.
 
-## Fabrication files
+## Combined fabrication files
 
-- `waterjet-ready.dxf` — primary AutoCAD R12 geometry in millimetres.
-- `waterjet-ready.svg` — equivalent closed geometry for Fusion 360.
+- `waterjet-ready.dxf` — full AutoCAD R12 geometry in millimetres.
+- `waterjet-ready.svg` — full closed geometry for Fusion 360.
 
 Cut `CUT_INNER` first, then `CUT_OUTER`. Kerf, lead-ins, and pierce strategy stay in CAM.
 

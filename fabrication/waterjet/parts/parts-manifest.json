@@ -1,0 +1,660 @@
+{
+  "alignment_rule": "Every part shares the same absolute origin and canvas. Import each file at origin with no transform. Cut ALIGN never.",
+  "canvas_mm": [
+    304.8,
+    304.8
+  ],
+  "origin": [
+    0.0,
+    0.0
+  ],
+  "parts": [
+    {
+      "canvas_mm": [
+        304.8,
+        304.8
+      ],
+      "centroids_mm": [],
+      "contour_indices": [],
+      "dxf": "fabrication/waterjet/parts/waterjet-part-00-outer-profile.dxf",
+      "includes_align_reference": false,
+      "includes_outer_profile": true,
+      "inner_cut_count": 0,
+      "origin": [
+        0.0,
+        0.0
+      ],
+      "part": "00-outer-profile",
+      "preview": "fabrication/waterjet/parts/waterjet-part-00-outer-profile-preview.png",
+      "summary": "Outside plate profile only. Cut this last.",
+      "svg": "fabrication/waterjet/parts/waterjet-part-00-outer-profile.svg"
+    },
+    {
+      "canvas_mm": [
+        304.8,
+        304.8
+      ],
+      "centroids_mm": [
+        {
+          "x": 161.281,
+          "y": 293.142
+        },
+        {
+          "x": 138.235,
+          "y": 292.605
+        },
+        {
+          "x": 187.074,
+          "y": 288.873
+        },
+        {
+          "x": 115.367,
+          "y": 288.067
+        },
+        {
+          "x": 155.726,
+          "y": 287.037
+        },
+        {
+          "x": 207.106,
+          "y": 281.44
+        },
+        {
+          "x": 94.386,
+          "y": 280.395
+        },
+        {
+          "x": 224.943,
+          "y": 272.534
+        },
+        {
+          "x": 73.849,
+          "y": 269.275
+        },
+        {
+          "x": 226.492,
+          "y": 262.968
+        },
+        {
+          "x": 40.874,
+          "y": 237.332
+        },
+        {
+          "x": 270.718,
+          "y": 227.456
+        },
+        {
+          "x": 29.928,
+          "y": 219.918
+        },
+        {
+          "x": 238.653,
+          "y": 243.588
+        },
+        {
+          "x": 280.594,
+          "y": 207.156
+        },
+        {
+          "x": 20.947,
+          "y": 198.424
+        },
+        {
+          "x": 286.771,
+          "y": 186.955
+        },
+        {
+          "x": 15.872,
+          "y": 176.88
+        },
+        {
+          "x": 290.844,
+          "y": 164.316
+        },
+        {
+          "x": 13.683,
+          "y": 155.311
+        },
+        {
+          "x": 290.893,
+          "y": 140.484
+        },
+        {
+          "x": 15.001,
+          "y": 132.846
+        },
+        {
+          "x": 286.664,
+          "y": 118.367
+        },
+        {
+          "x": 20.3,
+          "y": 111.526
+        },
+        {
+          "x": 279.002,
+          "y": 97.222
+        },
+        {
+          "x": 29.152,
+          "y": 89.604
+        },
+        {
+          "x": 268.255,
+          "y": 77.071
+        },
+        {
+          "x": 40.078,
+          "y": 71.672
+        },
+        {
+          "x": 255.07,
+          "y": 59.88
+        },
+        {
+          "x": 55.601,
+          "y": 53.512
+        },
+        {
+          "x": 239.944,
+          "y": 44.94
+        },
+        {
+          "x": 73.389,
+          "y": 39.157
+        },
+        {
+          "x": 221.634,
+          "y": 31.893
+        },
+        {
+          "x": 92.321,
+          "y": 27.515
+        },
+        {
+          "x": 201.483,
+          "y": 22.091
+        },
+        {
+          "x": 113.914,
+          "y": 19.429
+        },
+        {
+          "x": 179.094,
+          "y": 15.748
+        },
+        {
+          "x": 134.936,
+          "y": 14.752
+        },
+        {
+          "x": 157.102,
+          "y": 13.135
+        }
+      ],
+      "contour_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        13,
+        17,
+        20,
+        23,
+        30,
+        33,
+        43,
+        46,
+        57,
+        58,
+        71,
+        74,
+        75,
+        77,
+        78,
+        81,
+        82,
+        83,
+        84,
+        86,
+        87,
+        89,
+        90,
+        92,
+        93,
+        94,
+        95,
+        96
+      ],
+      "dxf": "fabrication/waterjet/parts/waterjet-part-01-rope-border.dxf",
+      "includes_align_reference": true,
+      "includes_outer_profile": false,
+      "inner_cut_count": 39,
+      "origin": [
+        0.0,
+        0.0
+      ],
+      "part": "01-rope-border",
+      "preview": "fabrication/waterjet/parts/waterjet-part-01-rope-border-preview.png",
+      "summary": "Braided rope border cutouts.",
+      "svg": "fabrication/waterjet/parts/waterjet-part-01-rope-border.svg"
+    },
+    {
+      "canvas_mm": [
+        304.8,
+        304.8
+      ],
+      "centroids_mm": [
+        {
+          "x": 204.046,
+          "y": 203.449
+        },
+        {
+          "x": 194.07,
+          "y": 197.294
+        },
+        {
+          "x": 169.118,
+          "y": 198.045
+        },
+        {
+          "x": 158.047,
+          "y": 199.477
+        },
+        {
+          "x": 138.203,
+          "y": 196.611
+        },
+        {
+          "x": 120.812,
+          "y": 198.336
+        },
+        {
+          "x": 180.115,
+          "y": 197.737
+        },
+        {
+          "x": 214.26,
+          "y": 176.549
+        },
+        {
+          "x": 163.417,
+          "y": 175.243
+        },
+        {
+          "x": 153.116,
+          "y": 176.954
+        },
+        {
+          "x": 135.309,
+          "y": 175.899
+        },
+        {
+          "x": 123.496,
+          "y": 176.592
+        },
+        {
+          "x": 111.078,
+          "y": 176.921
+        },
+        {
+          "x": 200.103,
+          "y": 177.651
+        },
+        {
+          "x": 181.656,
+          "y": 176.74
+        },
+        {
+          "x": 172.583,
+          "y": 172.668
+        },
+        {
+          "x": 219.744,
+          "y": 155.991
+        },
+        {
+          "x": 206.369,
+          "y": 157.052
+        },
+        {
+          "x": 192.209,
+          "y": 155.46
+        },
+        {
+          "x": 177.626,
+          "y": 155.535
+        },
+        {
+          "x": 162.0,
+          "y": 154.098
+        },
+        {
+          "x": 144.926,
+          "y": 156.398
+        },
+        {
+          "x": 133.699,
+          "y": 157.475
+        },
+        {
+          "x": 119.736,
+          "y": 156.024
+        },
+        {
+          "x": 106.098,
+          "y": 154.415
+        },
+        {
+          "x": 106.128,
+          "y": 134.488
+        },
+        {
+          "x": 211.484,
+          "y": 134.911
+        },
+        {
+          "x": 199.016,
+          "y": 134.503
+        },
+        {
+          "x": 177.178,
+          "y": 133.155
+        },
+        {
+          "x": 167.956,
+          "y": 130.106
+        },
+        {
+          "x": 158.454,
+          "y": 133.852
+        },
+        {
+          "x": 147.068,
+          "y": 134.861
+        },
+        {
+          "x": 133.201,
+          "y": 134.731
+        },
+        {
+          "x": 119.395,
+          "y": 136.698
+        }
+      ],
+      "contour_indices": [
+        22,
+        25,
+        26,
+        27,
+        28,
+        29,
+        31,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        59,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69
+      ],
+      "dxf": "fabrication/waterjet/parts/waterjet-part-02-quote-and-dividers.dxf",
+      "includes_align_reference": true,
+      "includes_outer_profile": false,
+      "inner_cut_count": 34,
+      "origin": [
+        0.0,
+        0.0
+      ],
+      "part": "02-quote-and-dividers",
+      "preview": "fabrication/waterjet/parts/waterjet-part-02-quote-and-dividers-preview.png",
+      "summary": "Central quote lettering and divider cuts.",
+      "svg": "fabrication/waterjet/parts/waterjet-part-02-quote-and-dividers.svg"
+    },
+    {
+      "canvas_mm": [
+        304.8,
+        304.8
+      ],
+      "centroids_mm": [
+        {
+          "x": 85.908,
+          "y": 87.878
+        },
+        {
+          "x": 162.155,
+          "y": 62.15
+        }
+      ],
+      "contour_indices": [
+        85,
+        91
+      ],
+      "dxf": "fabrication/waterjet/parts/waterjet-part-03-top-captain-mountains.dxf",
+      "includes_align_reference": true,
+      "includes_outer_profile": false,
+      "inner_cut_count": 2,
+      "origin": [
+        0.0,
+        0.0
+      ],
+      "part": "03-top-captain-mountains",
+      "preview": "fabrication/waterjet/parts/waterjet-part-03-top-captain-mountains-preview.png",
+      "summary": "Captain portrait plus mountains and forest.",
+      "svg": "fabrication/waterjet/parts/waterjet-part-03-top-captain-mountains.svg"
+    },
+    {
+      "canvas_mm": [
+        304.8,
+        304.8
+      ],
+      "centroids_mm": [
+        {
+          "x": 247.642,
+          "y": 195.826
+        },
+        {
+          "x": 227.928,
+          "y": 162.643
+        },
+        {
+          "x": 233.824,
+          "y": 133.687
+        },
+        {
+          "x": 223.061,
+          "y": 134.894
+        },
+        {
+          "x": 259.146,
+          "y": 152.01
+        },
+        {
+          "x": 207.637,
+          "y": 106.447
+        },
+        {
+          "x": 248.193,
+          "y": 94.503
+        },
+        {
+          "x": 209.164,
+          "y": 80.653
+        },
+        {
+          "x": 203.175,
+          "y": 51.099
+        }
+      ],
+      "contour_indices": [
+        24,
+        45,
+        60,
+        61,
+        72,
+        76,
+        79,
+        80,
+        88
+      ],
+      "dxf": "fabrication/waterjet/parts/waterjet-part-04-right-nautical-plane.dxf",
+      "includes_align_reference": true,
+      "includes_outer_profile": false,
+      "inner_cut_count": 9,
+      "origin": [
+        0.0,
+        0.0
+      ],
+      "part": "04-right-nautical-plane",
+      "preview": "fabrication/waterjet/parts/waterjet-part-04-right-nautical-plane-preview.png",
+      "summary": "Airplane, nautical symbols, and tropical island.",
+      "svg": "fabrication/waterjet/parts/waterjet-part-04-right-nautical-plane.svg"
+    },
+    {
+      "canvas_mm": [
+        304.8,
+        304.8
+      ],
+      "centroids_mm": [
+        {
+          "x": 62.598,
+          "y": 234.656
+        },
+        {
+          "x": 39.403,
+          "y": 200.353
+        },
+        {
+          "x": 76.993,
+          "y": 189.688
+        },
+        {
+          "x": 93.996,
+          "y": 156.024
+        },
+        {
+          "x": 86.854,
+          "y": 132.977
+        },
+        {
+          "x": 47.758,
+          "y": 140.758
+        }
+      ],
+      "contour_indices": [
+        15,
+        32,
+        44,
+        56,
+        70,
+        73
+      ],
+      "dxf": "fabrication/waterjet/parts/waterjet-part-05-left-globe-hiker.dxf",
+      "includes_align_reference": true,
+      "includes_outer_profile": false,
+      "inner_cut_count": 6,
+      "origin": [
+        0.0,
+        0.0
+      ],
+      "part": "05-left-globe-hiker",
+      "preview": "fabrication/waterjet/parts/waterjet-part-05-left-globe-hiker-preview.png",
+      "summary": "Globe, hiker, flag, and left palms.",
+      "svg": "fabrication/waterjet/parts/waterjet-part-05-left-globe-hiker.svg"
+    },
+    {
+      "canvas_mm": [
+        304.8,
+        304.8
+      ],
+      "centroids_mm": [
+        {
+          "x": 148.801,
+          "y": 273.707
+        },
+        {
+          "x": 102.863,
+          "y": 255.81
+        },
+        {
+          "x": 180.473,
+          "y": 247.411
+        },
+        {
+          "x": 231.486,
+          "y": 238.402
+        },
+        {
+          "x": 143.6,
+          "y": 234.246
+        },
+        {
+          "x": 205.413,
+          "y": 228.679
+        },
+        {
+          "x": 258.423,
+          "y": 203.792
+        }
+      ],
+      "contour_indices": [
+        10,
+        12,
+        14,
+        16,
+        18,
+        19,
+        21
+      ],
+      "dxf": "fabrication/waterjet/parts/waterjet-part-06-bottom-scene.dxf",
+      "includes_align_reference": true,
+      "includes_outer_profile": false,
+      "inner_cut_count": 7,
+      "origin": [
+        0.0,
+        0.0
+      ],
+      "part": "06-bottom-scene",
+      "preview": "fabrication/waterjet/parts/waterjet-part-06-bottom-scene-preview.png",
+      "summary": "Skyline, animals, yacht, sailboat, and lower waves.",
+      "svg": "fabrication/waterjet/parts/waterjet-part-06-bottom-scene.svg"
+    }
+  ],
+  "recommended_toolpath_order": [
+    "01-rope-border",
+    "02-quote-and-dividers",
+    "03-top-captain-mountains",
+    "04-right-nautical-plane",
+    "05-left-globe-hiker",
+    "06-bottom-scene",
+    "00-outer-profile"
+  ],
+  "units": "millimetres"
+}
